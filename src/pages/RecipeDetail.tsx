@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import useRecipeStore from '../stores/recipeStore';
-import { Recipe, Ingredient } from '../types/recipe';
+import type { Recipe, Ingredient } from '../types/recipe';
 import { formatIngredient, formatDuration, scaleRecipeIngredients } from '../utils/recipeUtils';
 
 export default function RecipeDetail() {

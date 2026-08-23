@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import useRecipeStore from '../stores/recipeStore';
-import { ShoppingList, ShoppingListItem } from '../types/recipe';
+import type { ShoppingList, ShoppingListItem } from '../types/recipe';
 import { mergeShoppingListItems, sortShoppingListItems, getIngredientCategory } from '../utils/recipeUtils';
 
 export default function ShoppingListPage() {
