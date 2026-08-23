@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Recipe, MealPlanItem, ShoppingList, ShoppingListItem } from '../types/recipe';
+import type { Recipe, MealPlanItem, ShoppingList, ShoppingListItem } from '../types/recipe';
 import { openDB } from 'idb';
 
 // Nom de la base de données IndexedDB
@@ -78,72 +78,6 @@ const recipeDB = {
   },
 };
 
-// Fonctions pour gérer les menus dans IndexedDB
-const mealPlanDB = {
-  async getAllMealPlans(): Promise<MealPlanItem[]> {
-    const db = await initDB();
-    return db.getAll(STORE_NAMES.MEAL_PLANS);
-  },
-
-  async getMealPlanById(id: string): Promise<MealPlanItem | undefined> {
-    const db = await initDB();
-    return db.get(STORE_NAMES.MEAL_PLANS, id);
-  },
-
-  async addMealPlan(mealPlan: MealPlanItem): Promise<void> {
-    const db = await initDB();
-    await db.add(STORE_NAMES.MEAL_PLANS, mealPlan);
-  },
-
-  async updateMealPlan(mealPlan: MealPlanItem): Promise<void> {
-    const db = await initDB();
-    await db.put(STORE_NAMES.MEAL_PLANS, mealPlan);
-  },
-
-  async deleteMealPlan(id: string): Promise<void> {
-    const db = await initDB();
-    await db.delete(STORE_NAMES.MEAL_PLANS, id);
-  },
-
-  async clearMealPlans(): Promise<void> {
-    const db = await initDB();
-    await db.clear(STORE_NAMES.MEAL_PLANS);
-  },
-};
-
-// Fonctions pour gérer les listes de courses dans IndexedDB
-const shoppingListDB = {
-  async getAllShoppingLists(): Promise<ShoppingList[]> {
-    const db = await initDB();
-    return db.getAll(STORE_NAMES.SHOPPING_LISTS);
-  },
-
-  async getShoppingListById(id: string): Promise<ShoppingList | undefined> {
-    const db = await initDB();
-    return db.get(STORE_NAMES.SHOPPING_LISTS, id);
-  },
-
-  async addShoppingList(shoppingList: ShoppingList): Promise<void> {
-    const db = await initDB();
-    await db.add(STORE_NAMES.SHOPPING_LISTS, shoppingList);
-  },
-
-  async updateShoppingList(shoppingList: ShoppingList): Promise<void> {
-    const db = await initDB();
-    await db.put(STORE_NAMES.SHOPPING_LISTS, shoppingList);
-  },
-
-  async deleteShoppingList(id: string): Promise<void> {
-    const db = await initDB();
-    await db.delete(STORE_NAMES.SHOPPING_LISTS, id);
-  },
-
-  async clearShoppingLists(): Promise<void> {
-    const db = await initDB();
-    await db.clear(STORE_NAMES.SHOPPING_LISTS);
-  },
-};
-
 // Store Zustand pour gérer l'état global de l'application
 interface AppState {
   recipes: Recipe[];
@@ -155,6 +89,7 @@ interface AppState {
   
   // Actions
   fetchRecipes: () => Promise<void>;
+  getAllRecipes: () => Promise<Recipe[]>;
   addRecipe: (recipe: Recipe) => Promise<void>;
   updateRecipe: (recipe: Recipe) => Promise<void>;
   deleteRecipe: (id: string) => Promise<void>;
@@ -192,6 +127,14 @@ const useRecipeStore = create<AppState>((set, get) => ({
       set({ recipes, isLoading: false });
     } catch (err) {
       set({ error: 'Erreur lors du chargement des recettes', isLoading: false });
+    }
+  },
+
+  getAllRecipes: async () => {
+    try {
+      return await recipeDB.getAllRecipes();
+    } catch (err) {
+      return [];
     }
   },
 
@@ -392,5 +335,71 @@ const useRecipeStore = create<AppState>((set, get) => ({
     }));
   },
 }));
+
+// Fonctions pour gérer les menus dans IndexedDB
+const mealPlanDB = {
+  async getAllMealPlans(): Promise<MealPlanItem[]> {
+    const db = await initDB();
+    return db.getAll(STORE_NAMES.MEAL_PLANS);
+  },
+
+  async getMealPlanById(id: string): Promise<MealPlanItem | undefined> {
+    const db = await initDB();
+    return db.get(STORE_NAMES.MEAL_PLANS, id);
+  },
+
+  async addMealPlan(mealPlan: MealPlanItem): Promise<void> {
+    const db = await initDB();
+    await db.add(STORE_NAMES.MEAL_PLANS, mealPlan);
+  },
+
+  async updateMealPlan(mealPlan: MealPlanItem): Promise<void> {
+    const db = await initDB();
+    await db.put(STORE_NAMES.MEAL_PLANS, mealPlan);
+  },
+
+  async deleteMealPlan(id: string): Promise<void> {
+    const db = await initDB();
+    await db.delete(STORE_NAMES.MEAL_PLANS, id);
+  },
+
+  async clearMealPlans(): Promise<void> {
+    const db = await initDB();
+    await db.clear(STORE_NAMES.MEAL_PLANS);
+  },
+};
+
+// Fonctions pour gérer les listes de courses dans IndexedDB
+const shoppingListDB = {
+  async getAllShoppingLists(): Promise<ShoppingList[]> {
+    const db = await initDB();
+    return db.getAll(STORE_NAMES.SHOPPING_LISTS);
+  },
+
+  async getShoppingListById(id: string): Promise<ShoppingList | undefined> {
+    const db = await initDB();
+    return db.get(STORE_NAMES.SHOPPING_LISTS, id);
+  },
+
+  async addShoppingList(shoppingList: ShoppingList): Promise<void> {
+    const db = await initDB();
+    await db.add(STORE_NAMES.SHOPPING_LISTS, shoppingList);
+  },
+
+  async updateShoppingList(shoppingList: ShoppingList): Promise<void> {
+    const db = await initDB();
+    await db.put(STORE_NAMES.SHOPPING_LISTS, shoppingList);
+  },
+
+  async deleteShoppingList(id: string): Promise<void> {
+    const db = await initDB();
+    await db.delete(STORE_NAMES.SHOPPING_LISTS, id);
+  },
+
+  async clearShoppingLists(): Promise<void> {
+    const db = await initDB();
+    await db.clear(STORE_NAMES.SHOPPING_LISTS);
+  },
+};
 
 export default useRecipeStore;
