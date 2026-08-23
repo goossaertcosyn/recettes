@@ -281,25 +281,6 @@ function App() {
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 text-sm">
-                    <div>
-                      <span className="text-gray-500">Catégorie: </span>
-                      <span>{recipe.category}</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-500">Prép: </span>
-                      <span>{recipe.prepTime} min</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-500">Portions: </span>
-                      <span>{numPeople}</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-500">Difficulté: </span>
-                      <span className="capitalize">{recipe.difficulty || 'facile'}</span>
-                    </div>
-                  </div>
-
                   <div className="mb-3">
                     <h4 className="font-medium text-gray-700 mb-1 text-sm">Ingrédients</h4>
                     <ul className="text-sm text-gray-600 space-y-0.5">
