@@ -1,147 +1,551 @@
 [
   {
-    "id": "1",
-    "name": "Pâtes carbonara",
-    "description": "Un classique italien rapide et savoureux.",
-    "category": "plat",
-    "prepTime": 10,
-    "cookTime": 15,
-    "portions": 2,
-    "difficulty": "facile",
-    "ingredients": [
-      {"name": "pâtes", "quantity": 200, "unit": "g"},
-      {"name": "œufs", "quantity": 2, "unit": "piece"},
-      {"name": "lardons fumés", "quantity": 100, "unit": "g"},
-      {"name": "parmesan râpé", "quantity": 50, "unit": "g"},
-      {"name": "crème fraîche", "quantity": 2, "unit": "c. à soupe"},
-      {"name": "poivre", "quantity": null, "unit": ""},
-      {"name": "sel", "quantity": null, "unit": ""}
-    ],
-    "steps": [
-      {"description": "Faire cuire les pâtes dans une grande casserole d'eau bouillante salée selon le temps indiqué sur le paquet."},
-      {"description": "Dans un bol, battre les œufs avec la crème fraîche, le parmesan, du sel et du poivre."},
-      {"description": "Faire revenir les lardons à la poêle sans ajout de matière grasse."},
-      {"description": "Égoutter les pâtes et les ajouter immédiatement aux lardons. Hors du feu, verser le mélange œufs-crème en remuant énergiquement."},
-      {"description": "Servir immédiatement avec un peu de parmesan supplémentaire."}
-    ],
-    "tags": ["italien", "rapide", "pâtes"],
-    "createdAt": "2024-08-23T00:00:00Z",
-    "updatedAt": "2024-08-23T00:00:00Z"
-  },
-  {
-    "id": "2",
-    "name": "Salade de tomates mozzarella",
-    "description": "Une salade fraîche et estivale.",
-    "category": "entrée",
-    "prepTime": 10,
-    "portions": 4,
-    "difficulty": "facile",
-    "ingredients": [
-      {"name": "tomates", "quantity": 4, "unit": "piece"},
-      {"name": "mozzarella", "quantity": 2, "unit": "boule"},
-      {"name": "basilic frais", "quantity": 1, "unit": "bouquet"},
-      {"name": "huile d'olive", "quantity": 3, "unit": "c. à soupe"},
-      {"name": "vinaigre balsamique", "quantity": 1, "unit": "c. à soupe"},
-      {"name": "sel", "quantity": null, "unit": ""},
-      {"name": "poivre", "quantity": null, "unit": ""}
-    ],
-    "steps": [
-      {"description": "Couper les tomates et la mozzarella en tranches."},
-      {"description": "Disposer alternativement les tranches de tomates et de mozzarella sur un plat."},
-      {"description": "Ajouter les feuilles de basilic."},
-      {"description": "Arroser d'huile d'olive et de vinaigre balsamique."},
-      {"description": "Saler et poivrer à votre goût."}
-    ],
-    "tags": ["végétarien", "été", "fraîcheur"],
-    "createdAt": "2024-08-23T00:00:00Z",
-    "updatedAt": "2024-08-23T00:00:00Z"
-  },
-  {
-    "id": "3",
-    "name": "Tarte aux pommes",
-    "description": "Une tarte aux pommes maison délicieuse.",
-    "category": "dessert",
-    "prepTime": 20,
-    "cookTime": 30,
-    "portions": 6,
-    "difficulty": "moyenne",
-    "ingredients": [
-      {"name": "pâte brisée", "quantity": 1, "unit": "rouleau"},
-      {"name": "pommes", "quantity": 6, "unit": "piece"},
-      {"name": "sucre", "quantity": 100, "unit": "g"},
-      {"name": "cannelle", "quantity": 1, "unit": "c. à café"},
-      {"name": "beurre", "quantity": 30, "unit": "g"}
-    ],
-    "steps": [
-      {"description": "Préchauffer le four à 180°C (th.6)."},
-      {"description": "Étaler la pâte brisée dans un moule à tarte et piquer le fond avec une fourchette."},
-      {"description": "Éplucher et couper les pommes en fines tranches."},
-      {"description": "Disposer les tranches de pommes sur la pâte en rosace."},
-      {"description": "Saupoudrer de sucre et de cannelle, et parsemer de petits morceaux de beurre."},
-      {"description": "Enfourner pendant 30 minutes jusqu'à ce que la pâte soit dorée."}
-    ],
-    "tags": ["dessert", "pommes", "classique"],
-    "createdAt": "2024-08-23T00:00:00Z",
-    "updatedAt": "2024-08-23T00:00:00Z"
-  },
-  {
-    "id": "4",
-    "name": "Omelette aux fines herbes",
-    "description": "Une omelette simple et savoureuse.",
-    "category": "plat",
-    "prepTime": 5,
-    "cookTime": 5,
-    "portions": 2,
-    "difficulty": "facile",
-    "ingredients": [
-      {"name": "œufs", "quantity": 4, "unit": "piece"},
-      {"name": "lait", "quantity": 2, "unit": "c. à soupe"},
-      {"name": "beurre", "quantity": 20, "unit": "g"},
-      {"name": "fines herbes", "quantity": 1, "unit": "c. à soupe"},
-      {"name": "sel", "quantity": null, "unit": ""},
-      {"name": "poivre", "quantity": null, "unit": ""}
-    ],
-    "steps": [
-      {"description": "Battre les œufs avec le lait, du sel et du poivre."},
-      {"description": "Faire chauffer le beurre dans une poêle à feu moyen."},
-      {"description": "Verser les œufs battus dans la poêle et ajouter les fines herbes."},
-      {"description": "Cuire à feu doux en remuant légèrement jusqu'à ce que l'omelette soit prise."},
-      {"description": "Plier l'omelette en deux et servir chaud."}
-    ],
-    "tags": ["rapide", "œufs", "facile"],
-    "createdAt": "2024-08-23T00:00:00Z",
-    "updatedAt": "2024-08-23T00:00:00Z"
-  },
-  {
-    "id": "5",
-    "name": "Soupe de légumes",
-    "description": "Une soupe réconfortante et nutritive.",
-    "category": "plat",
-    "prepTime": 15,
-    "cookTime": 25,
-    "portions": 4,
-    "difficulty": "facile",
-    "ingredients": [
-      {"name": "carottes", "quantity": 3, "unit": "piece"},
-      {"name": "poireaux", "quantity": 2, "unit": "piece"},
-      {"name": "pommes de terre", "quantity": 2, "unit": "piece"},
-      {"name": "oignon", "quantity": 1, "unit": "piece"},
-      {"name": "bouillon de légumes", "quantity": 1, "unit": "L"},
-      {"name": "huile d'olive", "quantity": 1, "unit": "c. à soupe"},
-      {"name": "sel", "quantity": null, "unit": ""},
-      {"name": "poivre", "quantity": null, "unit": ""}
-    ],
-    "steps": [
-      {"description": "Éplucher et couper tous les légumes en morceaux."},
-      {"description": "Faire revenir l'oignon dans une casserole avec l'huile d'olive."},
-      {"description": "Ajouter les autres légumes et les faire revenir 5 minutes."},
-      {"description": "Verser le bouillon de légumes et porter à ébullition."},
-      {"description": "Laisser mijoter 20 minutes à feu doux."},
-      {"description": "Mixez la soupe jusqu'à obtenir une texture lisse."},
-      {"description": "Assaisonner avec sel et poivre."}
-    ],
-    "tags": ["végétarien", "soupe", "hiver"],
-    "createdAt": "2024-08-23T00:00:00Z",
-    "updatedAt": "2024-08-23T00:00:00Z"
+    "recipes": [
+      {
+        "id": "9aeabshdhmcm2hb90xy9",
+        "name": "Pâtes crémeuses tomates & burrata",
+        "description": "Un plat de pâtes pour un repas qui fait rêver !",
+        "category": "plat",
+        "prepTime": 4,
+        "cookTime": 12,
+        "portions": 3,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Pâtes (Linguine)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Sauce tomate (basilic)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Oignon jaune",
+            "quantity": 0.75,
+            "unit": ""
+          },
+          {
+            "name": "Ail",
+            "quantity": 1.5,
+            "unit": "gousse"
+          },
+          {
+            "name": "Crème liquide",
+            "quantity": 150,
+            "unit": "ml"
+          },
+          {
+            "name": "Burrata",
+            "quantity": 1.5,
+            "unit": ""
+          },
+          {
+            "name": "Basilic (frais)",
+            "quantity": 3,
+            "unit": "brins"
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 3,
+            "unit": "c. à café"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Dans une casserole d’eau bouillante salée, faites cuire les pâtes selon les instructions du paquet. En fin de cuisson, réservez une petite louche d'eau de cuisson, puis égouttez les pâtes."
+          },
+          {
+            "description": "Pendant ce temps, épluchez puis émincez les oignons."
+          },
+          {
+            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez les oignons et l'ail râpé. Salez et poivrez. Faites-les cuire 4 à 5 minutes."
+          },
+          {
+            "description": "Ajoutez la sauce tomate et la crème. Mélangez et poursuivez la cuisson 2 à 3 minutes sur feu doux."
+          },
+          {
+            "description": "Ajoutez les pâtes égouttées et l'eau de cuisson réservée, si besoin. Mélangez bien le tout."
+          },
+          {
+            "description": "Servez les pâtes crémeuses à la tomate dans une assiette. Ajoutez la burrata par-dessus. Ré-assaisonnez selon vos goûts et ajoutez quelques feuilles de basilic, si vous en avez. C'est prêt !"
+          }
+        ],
+        "tags": [
+          "pâtes",
+          "tomate",
+          "burrata",
+          "crémeux",
+          "italien"
+        ],
+        "nutritionalInfo": {
+          "calories": 794,
+          "fat": 40,
+          "carbs": 78,
+          "protein": 23,
+          "fiber": 8,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "C",
+          "greenScore": "A"
+        }
+      },
+      {
+        "id": "96bb9s7pk27y34pi16jr",
+        "name": "Pâtes crémeuses aux champignons à l'italienne",
+        "description": "Des pâtes généreuses & pleines de goût, qui sentent bon l’Italie !",
+        "category": "plat",
+        "prepTime": 5,
+        "cookTime": 14,
+        "portions": 3,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Penne rigate protéinées",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Champignons de Paris (frais)",
+            "quantity": 450,
+            "unit": "g"
+          },
+          {
+            "name": "Tomate (concentré)",
+            "quantity": 3,
+            "unit": "c. à café"
+          },
+          {
+            "name": "Crème fraîche",
+            "quantity": 3,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "Ail",
+            "quantity": 0.75,
+            "unit": "gousse"
+          },
+          {
+            "name": "Parmesan (râpé)",
+            "quantity": 60,
+            "unit": "g"
+          },
+          {
+            "name": "Origan (séché)",
+            "quantity": 3,
+            "unit": "pincée"
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 3,
+            "unit": "c. à café"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Dans une casserole d'eau bouillante salée, faites cuire les pâtes selon les instructions du paquet. En fin de cuisson, réservez une petite louche d'eau de cuisson, puis égouttez les pâtes."
+          },
+          {
+            "description": "Pendant ce temps, lavez puis coupez les champignons en lamelles."
+          },
+          {
+            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez l'ail râpé et faites-le revenir 30 secondes, en mélangeant."
+          },
+          {
+            "description": "Ajoutez ensuite les champignons. Salez, poivrez et faites revenir le tout 5 à 6 minutes."
+          },
+          {
+            "description": "Ajoutez l'origan, le concentré de tomate, la crème fraîche et l'eau de cuisson réservée. Mélangez bien et poursuivez la cuisson 2 à 3 minutes, sur feu moyen."
+          },
+          {
+            "description": "Ajoutez le parmesan dans la poêle et mélangez bien le tout, jusqu'à ce que la sauce soit crémeuse."
+          },
+          {
+            "description": "Ajoutez les pâtes égouttées et mélangez à nouveau."
+          },
+          {
+            "description": "Servez les pâtes crémeuses aux champignons à l'italienne dans un bol ou une assiette creuse. Ré-assaisonnez selon vos goûts, c'est prêt !"
+          }
+        ],
+        "tags": [
+          "pâtes",
+          "champignons",
+          "italien",
+          "crémeux"
+        ],
+        "nutritionalInfo": {
+          "calories": 632,
+          "fat": 27,
+          "carbs": 64,
+          "protein": 29,
+          "fiber": 11,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "B",
+          "greenScore": "C"
+        }
+      },
+      {
+        "id": "93bk8qf0cli802uj1bo9",
+        "name": "Chakchouka aux lentilles & poireaux",
+        "description": "Faites le plein d'énergie avec cette chakchouka riche en fibres & en protéines !",
+        "category": "plat",
+        "prepTime": 12,
+        "cookTime": 21,
+        "portions": 3,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Lentilles (cuites)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Œuf",
+            "quantity": 6,
+            "unit": ""
+          },
+          {
+            "name": "Poireau",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Oignon jaune",
+            "quantity": 0.75,
+            "unit": ""
+          },
+          {
+            "name": "Tomate (chair)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Feta",
+            "quantity": 60,
+            "unit": "g"
+          },
+          {
+            "name": "Basilic (frais)",
+            "quantity": 3,
+            "unit": "brins"
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 3,
+            "unit": "c. à café"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Épluchez puis coupez les oignons en fines lamelles."
+          },
+          {
+            "description": "Coupez les extrémités des poireaux pour ne garder que le blanc, puis émincez-les. Placez-les dans une passoire et rincez abondamment pour retirer les impuretés."
+          },
+          {
+            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu vif. Ajoutez les oignons et les poireaux. Salez, poivrez, puis faites-les revenir 2 à 3 minutes, en mélangeant. Couvrez et poursuivez la cuisson 8 à 10 minutes, sur feu doux."
+          },
+          {
+            "description": "Ajoutez la pulpe de tomates et les lentilles. Mélangez, puis couvrez et poursuivez la cuisson 4 à 5 minutes."
+          },
+          {
+            "description": "Creusez des puits dans le mélange. Cassez-y délicatement les œufs, puis salez et poivrez-les. Couvrez et poursuivez la cuisson 2 à 3 minutes."
+          },
+          {
+            "description": "Ajoutez la feta émiettée et les feuilles de basilic, si vous en avez. Ré-assaisonnez selon vos goûts et dégustez chaud avec du pain grillé. C'est prêt !"
+          }
+        ],
+        "tags": [
+          "chakchouka",
+          "lentilles",
+          "poireaux",
+          "œufs",
+          "protéiné"
+        ],
+        "nutritionalInfo": {
+          "calories": 401,
+          "fat": 18,
+          "carbs": 24,
+          "protein": 30,
+          "fiber": 13,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "A",
+          "greenScore": "A+"
+        }
+      },
+      {
+        "id": "901tfv831jo002xt0tkt",
+        "name": "Boulettes végé, courgettes & sauce yaourt",
+        "description": "De délicieuses boulettes végétales accompagnées de légumes de saison grillés & d'une sauce onctueuse !",
+        "category": "plat",
+        "prepTime": 7,
+        "cookTime": 16,
+        "portions": 3,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Boulettes végétales",
+            "quantity": 240,
+            "unit": "g"
+          },
+          {
+            "name": "Courgette",
+            "quantity": 750,
+            "unit": "g"
+          },
+          {
+            "name": "Yaourt Grec",
+            "quantity": 3,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "Ail",
+            "quantity": 0.75,
+            "unit": "gousse"
+          },
+          {
+            "name": "Citron jaune",
+            "quantity": 0.375,
+            "unit": ""
+          },
+          {
+            "name": "Menthe (feuilles)",
+            "quantity": 0.3,
+            "unit": "bouquet"
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 3,
+            "unit": "c. à soupe"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Lavez puis coupez les courgettes en demi-lunes."
+          },
+          {
+            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez les courgettes. Salez, poivrez puis faites-les revenir 7 à 8 minutes."
+          },
+          {
+            "description": "Pendant ce temps, préparez la sauce au yaourt. Si vous en avez, rincez puis ciselez finement la menthe."
+          },
+          {
+            "description": "Dans un bol, mélangez : le yaourt grec, l'ail râpé, le zeste et le jus de citron, la menthe ciselée (optionnel) et un filet d'huile d'olive. Salez et poivrez. Réservez au frais."
+          },
+          {
+            "description": "Dans une seconde poêle, faites chauffer un filet d'huile d'olive, sur feu moyen. Ajoutez les boulettes végétales et faites-les cuire 8 minutes, en remuant régulièrement, jusqu'à ce qu'elles soient dorées sur toutes les faces."
+          },
+          {
+            "description": "Vérifiez la cuisson des courgettes, puis servez-les dans une assiette ou un bol avec les boulettes végétales et la sauce au yaourt. Ajoutez quelques feuilles de menthe, s'il vous en reste et ré-assaisonnez selon vos goûts. C'est prêt !"
+          }
+        ],
+        "tags": [
+          "boulettes végétales",
+          "courgettes",
+          "sauce yaourt",
+          "végétarien"
+        ],
+        "nutritionalInfo": {
+          "calories": 237,
+          "fat": 12,
+          "carbs": 13,
+          "protein": 18,
+          "fiber": 7,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "A",
+          "greenScore": "A+"
+        }
+      },
+      {
+        "id": "8lvy7hy838g0jnld13f5",
+        "name": "Frittata fromage fouetté & tomates séchées",
+        "description": "Le goût incomparable du fromage fouetté dans une frittata irrésistible !",
+        "category": "plat",
+        "prepTime": 8,
+        "cookTime": 15,
+        "portions": 4,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Œuf",
+            "quantity": 8,
+            "unit": ""
+          },
+          {
+            "name": "Fromage fouetté",
+            "quantity": 200,
+            "unit": "g"
+          },
+          {
+            "name": "Tomates séchées",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "Épinard (frais)",
+            "quantity": 2,
+            "unit": "poignées"
+          },
+          {
+            "name": "Échalote",
+            "quantity": 1,
+            "unit": ""
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 2,
+            "unit": "c. à soupe"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Préchauffez le four à 180°C. Épluchez puis coupez les échalotes en fines lamelles."
+          },
+          {
+            "description": "Égouttez puis coupez les tomates séchées en lamelles."
+          },
+          {
+            "description": "Dans un saladier, cassez les œufs. Salez, poivrez puis battez-les avec une fourchette ou un fouet."
+          },
+          {
+            "description": "Huilez ou beurrez le fond d'un moule (le nôtre fait 23 cm de diamètre) à l'aide d'un pinceau. Déposez une feuille de papier cuisson dans le fond du moule et huilez-le."
+          },
+          {
+            "description": "Ajoutez les pousses d'épinards, les échalotes et les lamelles de tomates séchées."
+          },
+          {
+            "description": "Versez les œufs battus, puis disposez des morceaux de fromage fouetté sur le dessus. Ré-assaisonnez selon vos goûts, puis enfournez 15 à 20 minutes à 180°C."
+          },
+          {
+            "description": "Sortez la frittata du four puis démoulez-la. Ajoutez quelques feuilles de basilic, si vous en avez et servez-la avec une salade verte. C'est prêt !"
+          }
+        ],
+        "tags": [
+          "frittata",
+          "fromage fouetté",
+          "tomates séchées",
+          "épinards"
+        ],
+        "nutritionalInfo": {
+          "calories": 352,
+          "fat": 27,
+          "carbs": 7,
+          "protein": 19,
+          "fiber": 2,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "C",
+          "greenScore": "B"
+        }
+      },
+      {
+        "id": "99qb8us95fey2oiu13c5",
+        "name": "Curry de pois chiches coco cacahuètes",
+        "description": "Le mélange curry & cacahuètes mettra vos papilles en éveil !",
+        "category": "plat",
+        "prepTime": 0,
+        "cookTime": 13,
+        "portions": 3,
+        "difficulty": "Très facile",
+        "ingredients": [
+          {
+            "name": "Riz",
+            "quantity": 210,
+            "unit": "g"
+          },
+          {
+            "name": "Pois chiches (cuits)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Épinards (surgelés)",
+            "quantity": 300,
+            "unit": "g"
+          },
+          {
+            "name": "Tomates concassées",
+            "quantity": 150,
+            "unit": "g"
+          },
+          {
+            "name": "Beurre de cacahuète",
+            "quantity": 3,
+            "unit": "c. à café"
+          },
+          {
+            "name": "Lait de coco",
+            "quantity": 150,
+            "unit": "ml"
+          },
+          {
+            "name": "Curry (poudre)",
+            "quantity": 2,
+            "unit": "c. à café"
+          },
+          {
+            "name": "Ail",
+            "quantity": 0.75,
+            "unit": ""
+          },
+          {
+            "name": "Huile d'olive",
+            "quantity": 3,
+            "unit": "c. à café"
+          }
+        ],
+        "steps": [
+          {
+            "description": "Dans une casserole d'eau bouillante salée, faites cuire le riz selon les instructions du paquet. En fin de cuisson, égouttez-le."
+          },
+          {
+            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez l'ail râpé et le curry. Faites-les revenir 1 minute, en mélangeant."
+          },
+          {
+            "description": "Ajoutez les tomates concassées, les pois chiches, les épinards et un filet d'eau. Salez et poivrez. Couvrez et laissez mijoter 8 à 10 minutes."
+          },
+          {
+            "description": "En fin de cuisson, mélangez le tout, puis ajoutez le beurre de cacahuètes et le lait de coco. Mélangez bien et poursuivez la cuisson 1 à 2 minutes supplémentaires."
+          },
+          {
+            "description": "Servez le riz dans un bol ou une assiette creuse avec le curry de pois chiches au coco cacahuètes. Ré-assaisonnez selon vos goûts et ajoutez quelques feuilles de coriandre, si vous en avez. C'est prêt !"
+          }
+        ],
+        "tags": [
+          "curry",
+          "pois chiches",
+          "coco",
+          "cacahuètes",
+          "végétarien"
+        ],
+        "nutritionalInfo": {
+          "calories": 639,
+          "fat": 23,
+          "carbs": 81,
+          "protein": 20,
+          "fiber": 15,
+          "unit": "kcal"
+        },
+        "costPerServing": "€€€",
+        "scores": {
+          "nutriScore": "A",
+          "greenScore": "A+"
+        }
+      }
+    ]
   }
 ]
