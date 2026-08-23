@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useRecipeStore from './stores/recipeStore';
-import type { Recipe, Ingredient, ShoppingListItem } from './types/recipe';
+import type { Recipe, ShoppingListItem } from './types/recipe';
 import recipesData from './data/recipes.json';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     const init = async () => {
       const storedRecipes = await useRecipeStore.getState().getAllRecipes();
       if (storedRecipes.length === 0) {
-        await importRecipesFromJson(recipesData as Recipe[]);
+        await importRecipesFromJson(recipesData as unknown as Recipe[]);
       }
       await fetchRecipes();
       setIsLoading(false);
