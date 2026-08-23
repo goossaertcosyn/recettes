@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    scaleway = {
+      source = "scaleway/scaleway"
+    }
+  }
+}
+
 # Module pour créer un bucket S3 Scaleway avec hébergement statique
 # Utilisé pour héberger une PWA (Progressive Web App)
 
@@ -9,6 +17,7 @@ terraform {
   }
 }
 
+# 1. Ressource pour le bucket (SANS le bloc website, car Scaleway ne supporte pas ce bloc dans scaleway_object_bucket)
 resource "scaleway_object_bucket" "static_website" {
   name   = var.bucket_name
   region = var.region
@@ -31,7 +40,19 @@ resource "scaleway_object_bucket" "static_website" {
   tags = var.tags
 }
 
-# Politique de bucket pour rendre les objets publics (si ACL = private)
+# 2. Ressource dédiée pour activer l'hébergement statique
+# Voir : https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/object_bucket_website_configuration
+resource "scaleway_object_bucket_website_configuration" "static_website" {
+  bucket = scaleway_object_bucket.static_website.name
+  index_document {
+    suffix = var.index_document
+  }
+  error_document {
+    key = var.error_document
+  }
+}
+
+# 3. Politique de bucket pour rendre les objets publics (si ACL = private)
 resource "scaleway_object_bucket_policy" "public_read" {
   count = var.acl == "private" ? 1 : 0
 
@@ -45,9 +66,7 @@ resource "scaleway_object_bucket_policy" "public_read" {
         Effect    = "Allow"
         Principal = "*"
         Action    = "s3:GetObject"
-        Resource = [
-          "${scaleway_object_bucket.static_website.name}/*"
-        ]
+        Resource  = ["${scaleway_object_bucket.static_website.name}/*"]
       }
     ]
   })

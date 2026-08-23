@@ -14,3 +14,14 @@ output "bucket_endpoint" {
   description = "Endpoint public du bucket"
   value       = scaleway_object_bucket.static_website.endpoint
 }
+
+# Endpoint de l'hébergement statique (disponible via scaleway_object_bucket_website_configuration)
+output "bucket_website_endpoint" {
+  description = "Endpoint de l'hébergement statique"
+  value       = "${scaleway_object_bucket.static_website.name}.website.${scaleway_object_bucket.static_website.region}.scw.cloud"
+}
+
+output "bucket_website_url" {
+  description = "URL complète de l'hébergement statique"
+  value       = "https://${scaleway_object_bucket.static_website.name}.website.${scaleway_object_bucket.static_website.region}.scw.cloud"
+}

@@ -13,23 +13,6 @@ variable "scaleway_zone" {
   default     = "fr-par-1"
 }
 
-variable "scaleway_project_id" {
-  description = "ID du projet Scaleway"
-  type        = string
-}
-
-variable "scaleway_access_key" {
-  description = "Clé d'accès Scaleway"
-  type        = string
-  sensitive   = true
-}
-
-variable "scaleway_secret_key" {
-  description = "Clé secrète Scaleway"
-  type        = string
-  sensitive   = true
-}
-
 variable "access_key" {
   type      = string
   sensitive = true
