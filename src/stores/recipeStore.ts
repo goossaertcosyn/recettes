@@ -328,7 +328,7 @@ const useRecipeStore = create<AppState>((set, get) => ({
     return Array.from(shoppingListMap.entries()).map(([name, data]) => ({
       id: `${name}-${Date.now()}`,
       name: name.split('-')[0], // On retire l'unité si elle était ajoutée
-      quantity: data.quantity,
+      quantity: parseFloat(data.quantity.toFixed(1)),
       unit: data.unit,
       checked: false,
       recipeIds: data.recipeIds,

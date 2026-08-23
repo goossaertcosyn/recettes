@@ -11,6 +11,35 @@ function App() {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Charger l'état coché depuis localStorage au chargement initial
+  useEffect(() => {
+    const savedChecked = localStorage.getItem('shoppingListChecked');
+    if (savedChecked && shoppingList.length > 0) {
+      try {
+        const checkedState = JSON.parse(savedChecked) as Record<string, boolean>;
+        setShoppingList(prev => 
+          prev.map(item => ({
+            ...item,
+            checked: checkedState[item.id] || false
+          }))
+        );
+      } catch (e) {
+        console.error('Erreur lors du chargement de l\'état coché', e);
+      }
+    }
+  }, [shoppingList.length]);
+
+  // Sauvegarder l'état coché dans localStorage à chaque changement
+  useEffect(() => {
+    if (shoppingList.length > 0) {
+      const checkedState = shoppingList.reduce((acc, item) => {
+        acc[item.id] = item.checked;
+        return acc;
+      }, {} as Record<string, boolean>);
+      localStorage.setItem('shoppingListChecked', JSON.stringify(checkedState));
+    }
+  }, [shoppingList]);
+
   useEffect(() => {
     const init = async () => {
       const storedRecipes = await useRecipeStore.getState().getAllRecipes();
@@ -44,7 +73,14 @@ function App() {
     }));
 
     const items = generateShoppingListFromMealPlans(mealPlans, recipes);
-    setShoppingList(items);
+    // Trier : éléments non cochés en premier, puis cochés
+    const sortedItems = [...items].sort((a, b) => {
+      if (a.checked !== b.checked) {
+        return a.checked ? 1 : -1;
+      }
+      return 0;
+    });
+    setShoppingList(sortedItems);
   };
 
   const replaceRecipe = (index: number) => {
@@ -69,7 +105,14 @@ function App() {
     }));
 
     const items = generateShoppingListFromMealPlans(mealPlans, recipes);
-    setShoppingList(items);
+    // Trier : éléments non cochés en premier, puis cochés
+    const sortedItems = [...items].sort((a, b) => {
+      if (a.checked !== b.checked) {
+        return a.checked ? 1 : -1;
+      }
+      return 0;
+    });
+    setShoppingList(sortedItems);
   };
 
   const getScaledIngredients = (recipe: Recipe) => {
@@ -80,7 +123,7 @@ function App() {
       }
       return {
         ...ingredient,
-        quantity: parseFloat((ingredient.quantity * scaleFactor).toFixed(2)),
+        quantity: parseFloat((ingredient.quantity * scaleFactor).toFixed(1)),
       };
     });
   };
@@ -93,6 +136,23 @@ function App() {
   const handleNumRecipesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value) || 1;
     setNumRecipes(Math.max(1, Math.min(value, recipes.length)));
+  };
+
+  const handleToggleChecked = (itemId: string) => {
+    const newShoppingList = shoppingList.map(item => {
+      if (item.id === itemId) {
+        return { ...item, checked: !item.checked };
+      }
+      return item;
+    });
+    // Trier : éléments non cochés en premier, puis cochés
+    const sortedList = [...newShoppingList].sort((a, b) => {
+      if (a.checked !== b.checked) {
+        return a.checked ? 1 : -1;
+      }
+      return 0;
+    });
+    setShoppingList(sortedList);
   };
 
   if (isLoading) {
@@ -195,7 +255,7 @@ function App() {
                       {scaledIngredients.map((ingredient, i) => (
                         <li key={i}>
                           {ingredient.quantity !== null ?
-                            `${ingredient.quantity} ${ingredient.unit} ` : ''}
+                            `${parseFloat(ingredient.quantity.toString()).toFixed(1)} ${ingredient.unit} ` : ''}
                           {ingredient.name}
                         </li>
                       ))}
@@ -232,11 +292,13 @@ function App() {
                   <div className="flex items-center gap-3">
                     <input
                       type="checkbox"
+                      checked={item.checked || false}
+                      onChange={() => handleToggleChecked(item.id)}
                       className="rounded text-indigo-600 focus:ring-indigo-500"
                     />
                     <span className="text-gray-700">
                       {item.quantity !== null ?
-                        `${item.quantity} ${item.unit} ` : ''}
+                        `${parseFloat(item.quantity.toString()).toFixed(1)} ${item.unit} ` : ''}
                       {item.name}
                     </span>
                   </div>
