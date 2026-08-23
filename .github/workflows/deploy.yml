@@ -1,0 +1,79 @@
+name: Deploy to Scaleway Object Storage
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      # 1. Checkout le code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+        
+      # 4. Build site
+      - name: Build site
+        run: npm run build
+        
+      # 5. Configure Scaleway CLI
+      - name: Configure Scaleway CLI
+        uses: scaleway/action-scw@v0
+        with:
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ vars.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ vars.SCW_DEFAULT_ORGANIZATION_ID }}
+        
+      # 6. Install s3cmd
+      - name: Install s3cmd
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y s3cmd
+          scw object config install type=s3cmd
+        env:
+          SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+          SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+          SCW_DEFAULT_PROJECT_ID: ${{ vars.SCW_DEFAULT_PROJECT_ID }}
+          SCW_DEFAULT_ORGANIZATION_ID: ${{ vars.SCW_DEFAULT_ORGANIZATION_ID }}
+        
+      # 7. Deploy to Scaleway Bucket
+      - name: Deploy to Scaleway Bucket
+        run: |
+          # Synchroniser tout le contenu
+          s3cmd sync --acl-public --delete-removed ./dist/ s3://recettes.goossaertcosyn.fr/
+          
+          # Forcer les MIME types pour les fichiers statiques
+          # Fichiers HTML
+          s3cmd put --acl-public ./dist/index.html s3://recettes.goossaertcosyn.fr/index.html --mime-type="text/html"
+          
+          # Forcer les MIME types pour tous les fichiers CSS
+          find ./dist -name "*.css" -type f | while read file; do
+            relative_path=${file#./dist/}
+            s3cmd put --acl-public "$file" s3://recettes.goossaertcosyn.fr/$relative_path --mime-type="text/css"
+          done
+          
+          # Forcer les MIME types pour tous les fichiers JS
+          find ./dist -name "*.js" -type f | while read file; do
+            relative_path=${file#./dist/}
+            s3cmd put --acl-public "$file" s3://recettes.goossaertcosyn.fr/$relative_path --mime-type="application/javascript"
+          done
+        env:
+          SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+          SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+          SCW_DEFAULT_PROJECT_ID: ${{ vars.SCW_DEFAULT_PROJECT_ID }}
+          SCW_DEFAULT_ORGANIZATION_ID: ${{ vars.SCW_DEFAULT_ORGANIZATION_ID }}
