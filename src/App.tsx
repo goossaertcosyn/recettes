@@ -3,6 +3,13 @@ import useRecipeStore from './stores/recipeStore';
 import type { Recipe, ShoppingListItem } from './types/recipe';
 import recipesData from './data/recipes.json';
 
+// Fonction pour générer un ID stable basé sur le nom et l'unité
+const generateStableItemId = (name: string, unit: string): string => {
+  const normalizedName = name.toLowerCase().trim();
+  const normalizedUnit = unit.toLowerCase().trim();
+  return `${normalizedName}-${normalizedUnit}`;
+};
+
 function App() {
   const { recipes, fetchRecipes, importRecipesFromJson, generateShoppingListFromMealPlans } = useRecipeStore();
   const [numPeople, setNumPeople] = useState<number>(2);
@@ -11,34 +18,51 @@ function App() {
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Charger l'état coché depuis localStorage au chargement initial
+  // Charger la shopping list complète depuis localStorage au chargement initial
   useEffect(() => {
-    const savedChecked = localStorage.getItem('shoppingListChecked');
-    if (savedChecked && shoppingList.length > 0) {
+    const savedShoppingList = localStorage.getItem('shoppingList');
+    if (savedShoppingList) {
       try {
-        const checkedState = JSON.parse(savedChecked) as Record<string, boolean>;
-        setShoppingList(prev => 
-          prev.map(item => ({
-            ...item,
-            checked: checkedState[item.id] || false
-          }))
-        );
+        const parsedList = JSON.parse(savedShoppingList) as ShoppingListItem[];
+        setShoppingList(parsedList);
       } catch (e) {
-        console.error('Erreur lors du chargement de l\'état coché', e);
+        console.error('Erreur lors du chargement de la liste de courses', e);
       }
     }
-  }, [shoppingList.length]);
+  }, []);
 
-  // Sauvegarder l'état coché dans localStorage à chaque changement
+  // Sauvegarder la shopping list complète dans localStorage à chaque changement
   useEffect(() => {
     if (shoppingList.length > 0) {
-      const checkedState = shoppingList.reduce((acc, item) => {
-        acc[item.id] = item.checked;
-        return acc;
-      }, {} as Record<string, boolean>);
-      localStorage.setItem('shoppingListChecked', JSON.stringify(checkedState));
+      localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
     }
   }, [shoppingList]);
+
+  // Sauvegarder aussi les recettes générées pour les restaurer
+  useEffect(() => {
+    if (generatedRecipes.length > 0) {
+      localStorage.setItem('generatedRecipes', JSON.stringify(generatedRecipes));
+    }
+  }, [generatedRecipes]);
+
+  // Charger les recettes générées depuis localStorage
+  useEffect(() => {
+    const savedRecipes = localStorage.getItem('generatedRecipes');
+    if (savedRecipes && recipes.length > 0) {
+      try {
+        const parsedRecipes = JSON.parse(savedRecipes) as Recipe[];
+        // Vérifier que les recettes sauvegardées existent toujours dans la base
+        const validRecipes = parsedRecipes.filter(r => 
+          recipes.some(existing => existing.id === r.id)
+        );
+        if (validRecipes.length > 0) {
+          setGeneratedRecipes(validRecipes);
+        }
+      } catch (e) {
+        console.error('Erreur lors du chargement des recettes générées', e);
+      }
+    }
+  }, [recipes]);
 
   useEffect(() => {
     const init = async () => {
@@ -52,11 +76,14 @@ function App() {
     init();
   }, [fetchRecipes, importRecipesFromJson]);
 
+  // Ne plus régénérer automatiquement au chargement - on utilise ce qui est sauvegardé
   useEffect(() => {
-    if (recipes.length > 0 && !isLoading) {
+    // Si on a déjà une shopping list, ne pas régénérer
+    const savedShoppingList = localStorage.getItem('shoppingList');
+    if (!savedShoppingList && recipes.length > 0 && !isLoading && generatedRecipes.length === 0) {
       generateRandomSelection();
     }
-  }, [recipes, numPeople, numRecipes, isLoading]);
+  }, [recipes, numPeople, numRecipes, isLoading, generatedRecipes.length]);
 
   const generateRandomSelection = () => {
     if (recipes.length === 0) return;
@@ -73,12 +100,17 @@ function App() {
     }));
 
     const items = generateShoppingListFromMealPlans(mealPlans, recipes);
+    // Appliquer des IDs stables
+    const itemsWithStableIds = items.map(item => ({
+      ...item,
+      id: generateStableItemId(item.name, item.unit),
+    }));
     // Trier : éléments non cochés en premier, puis cochés
-    const sortedItems = [...items].sort((a, b) => {
+    const sortedItems = [...itemsWithStableIds].sort((a, b) => {
       if (a.checked !== b.checked) {
         return a.checked ? 1 : -1;
       }
-      return 0;
+      return a.name.localeCompare(b.name);
     });
     setShoppingList(sortedItems);
   };
@@ -105,12 +137,17 @@ function App() {
     }));
 
     const items = generateShoppingListFromMealPlans(mealPlans, recipes);
+    // Appliquer des IDs stables
+    const itemsWithStableIds = items.map(item => ({
+      ...item,
+      id: generateStableItemId(item.name, item.unit),
+    }));
     // Trier : éléments non cochés en premier, puis cochés
-    const sortedItems = [...items].sort((a, b) => {
+    const sortedItems = [...itemsWithStableIds].sort((a, b) => {
       if (a.checked !== b.checked) {
         return a.checked ? 1 : -1;
       }
-      return 0;
+      return a.name.localeCompare(b.name);
     });
     setShoppingList(sortedItems);
   };
@@ -150,9 +187,15 @@ function App() {
       if (a.checked !== b.checked) {
         return a.checked ? 1 : -1;
       }
-      return 0;
+      return a.name.localeCompare(b.name);
     });
     setShoppingList(sortedList);
+  };
+
+  const clearShoppingList = () => {
+    setShoppingList([]);
+    localStorage.removeItem('shoppingList');
+    localStorage.removeItem('generatedRecipes');
   };
 
   if (isLoading) {
@@ -201,12 +244,20 @@ function App() {
             </div>
           </div>
 
-          <button
-            onClick={generateRandomSelection}
-            className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors mb-6"
-          >
-            Generer
-          </button>
+          <div className="flex gap-4 mb-6">
+            <button
+              onClick={generateRandomSelection}
+              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+            >
+              Générer
+            </button>
+            <button
+              onClick={clearShoppingList}
+              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
+            >
+              Effacer
+            </button>
+          </div>
 
           <div className="space-y-4">
             {generatedRecipes.map((recipe, index) => {
@@ -232,11 +283,11 @@ function App() {
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 text-sm">
                     <div>
-                      <span className="text-gray-500">Category: </span>
+                      <span className="text-gray-500">Catégorie: </span>
                       <span>{recipe.category}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">Prep: </span>
+                      <span className="text-gray-500">Prép: </span>
                       <span>{recipe.prepTime} min</span>
                     </div>
                     <div>
@@ -244,13 +295,13 @@ function App() {
                       <span>{numPeople}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">Difficulte: </span>
+                      <span className="text-gray-500">Difficulté: </span>
                       <span className="capitalize">{recipe.difficulty || 'facile'}</span>
                     </div>
                   </div>
 
                   <div className="mb-3">
-                    <h4 className="font-medium text-gray-700 mb-1 text-sm">Ingredients</h4>
+                    <h4 className="font-medium text-gray-700 mb-1 text-sm">Ingrédients</h4>
                     <ul className="text-sm text-gray-600 space-y-0.5">
                       {scaledIngredients.map((ingredient, i) => (
                         <li key={i}>
@@ -263,7 +314,7 @@ function App() {
                   </div>
 
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-1 text-sm">Etapes</h4>
+                    <h4 className="font-medium text-gray-700 mb-1 text-sm">Étapes</h4>
                     <ol className="text-sm text-gray-600 space-y-1 list-decimal list-inside">
                       {recipe.steps.map((step, i) => (
                         <li key={i}>{step.description}</li>
@@ -307,7 +358,7 @@ function App() {
             </div>
           ) : (
             <p className="text-gray-500 text-center py-4">
-              Aucune liste de courses generee
+              Aucune liste de courses générée
             </p>
           )}
         </section>
