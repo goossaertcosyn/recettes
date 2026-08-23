@@ -37,7 +37,7 @@ variable "project_id" {
 variable "bucket_name" {
   description = "Nom du bucket S3 (doit être globalement unique)"
   type        = string
-  default     = "recettes"
+  default     = "recettes.goossaertcosyn.fr"
 }
 
 variable "bucket_acl" {
