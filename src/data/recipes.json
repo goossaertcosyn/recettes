@@ -1,0 +1,147 @@
+[
+  {
+    "id": "1",
+    "name": "Pâtes carbonara",
+    "description": "Un classique italien rapide et savoureux.",
+    "category": "plat",
+    "prepTime": 10,
+    "cookTime": 15,
+    "portions": 2,
+    "difficulty": "facile",
+    "ingredients": [
+      {"name": "pâtes", "quantity": 200, "unit": "g"},
+      {"name": "œufs", "quantity": 2, "unit": "piece"},
+      {"name": "lardons fumés", "quantity": 100, "unit": "g"},
+      {"name": "parmesan râpé", "quantity": 50, "unit": "g"},
+      {"name": "crème fraîche", "quantity": 2, "unit": "c. à soupe"},
+      {"name": "poivre", "quantity": null, "unit": ""},
+      {"name": "sel", "quantity": null, "unit": ""}
+    ],
+    "steps": [
+      {"description": "Faire cuire les pâtes dans une grande casserole d'eau bouillante salée selon le temps indiqué sur le paquet."},
+      {"description": "Dans un bol, battre les œufs avec la crème fraîche, le parmesan, du sel et du poivre."},
+      {"description": "Faire revenir les lardons à la poêle sans ajout de matière grasse."},
+      {"description": "Égoutter les pâtes et les ajouter immédiatement aux lardons. Hors du feu, verser le mélange œufs-crème en remuant énergiquement."},
+      {"description": "Servir immédiatement avec un peu de parmesan supplémentaire."}
+    ],
+    "tags": ["italien", "rapide", "pâtes"],
+    "createdAt": "2024-08-23T00:00:00Z",
+    "updatedAt": "2024-08-23T00:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Salade de tomates mozzarella",
+    "description": "Une salade fraîche et estivale.",
+    "category": "entrée",
+    "prepTime": 10,
+    "portions": 4,
+    "difficulty": "facile",
+    "ingredients": [
+      {"name": "tomates", "quantity": 4, "unit": "piece"},
+      {"name": "mozzarella", "quantity": 2, "unit": "boule"},
+      {"name": "basilic frais", "quantity": 1, "unit": "bouquet"},
+      {"name": "huile d'olive", "quantity": 3, "unit": "c. à soupe"},
+      {"name": "vinaigre balsamique", "quantity": 1, "unit": "c. à soupe"},
+      {"name": "sel", "quantity": null, "unit": ""},
+      {"name": "poivre", "quantity": null, "unit": ""}
+    ],
+    "steps": [
+      {"description": "Couper les tomates et la mozzarella en tranches."},
+      {"description": "Disposer alternativement les tranches de tomates et de mozzarella sur un plat."},
+      {"description": "Ajouter les feuilles de basilic."},
+      {"description": "Arroser d'huile d'olive et de vinaigre balsamique."},
+      {"description": "Saler et poivrer à votre goût."}
+    ],
+    "tags": ["végétarien", "été", "fraîcheur"],
+    "createdAt": "2024-08-23T00:00:00Z",
+    "updatedAt": "2024-08-23T00:00:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Tarte aux pommes",
+    "description": "Une tarte aux pommes maison délicieuse.",
+    "category": "dessert",
+    "prepTime": 20,
+    "cookTime": 30,
+    "portions": 6,
+    "difficulty": "moyenne",
+    "ingredients": [
+      {"name": "pâte brisée", "quantity": 1, "unit": "rouleau"},
+      {"name": "pommes", "quantity": 6, "unit": "piece"},
+      {"name": "sucre", "quantity": 100, "unit": "g"},
+      {"name": "cannelle", "quantity": 1, "unit": "c. à café"},
+      {"name": "beurre", "quantity": 30, "unit": "g"}
+    ],
+    "steps": [
+      {"description": "Préchauffer le four à 180°C (th.6)."},
+      {"description": "Étaler la pâte brisée dans un moule à tarte et piquer le fond avec une fourchette."},
+      {"description": "Éplucher et couper les pommes en fines tranches."},
+      {"description": "Disposer les tranches de pommes sur la pâte en rosace."},
+      {"description": "Saupoudrer de sucre et de cannelle, et parsemer de petits morceaux de beurre."},
+      {"description": "Enfourner pendant 30 minutes jusqu'à ce que la pâte soit dorée."}
+    ],
+    "tags": ["dessert", "pommes", "classique"],
+    "createdAt": "2024-08-23T00:00:00Z",
+    "updatedAt": "2024-08-23T00:00:00Z"
+  },
+  {
+    "id": "4",
+    "name": "Omelette aux fines herbes",
+    "description": "Une omelette simple et savoureuse.",
+    "category": "plat",
+    "prepTime": 5,
+    "cookTime": 5,
+    "portions": 2,
+    "difficulty": "facile",
+    "ingredients": [
+      {"name": "œufs", "quantity": 4, "unit": "piece"},
+      {"name": "lait", "quantity": 2, "unit": "c. à soupe"},
+      {"name": "beurre", "quantity": 20, "unit": "g"},
+      {"name": "fines herbes", "quantity": 1, "unit": "c. à soupe"},
+      {"name": "sel", "quantity": null, "unit": ""},
+      {"name": "poivre", "quantity": null, "unit": ""}
+    ],
+    "steps": [
+      {"description": "Battre les œufs avec le lait, du sel et du poivre."},
+      {"description": "Faire chauffer le beurre dans une poêle à feu moyen."},
+      {"description": "Verser les œufs battus dans la poêle et ajouter les fines herbes."},
+      {"description": "Cuire à feu doux en remuant légèrement jusqu'à ce que l'omelette soit prise."},
+      {"description": "Plier l'omelette en deux et servir chaud."}
+    ],
+    "tags": ["rapide", "œufs", "facile"],
+    "createdAt": "2024-08-23T00:00:00Z",
+    "updatedAt": "2024-08-23T00:00:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Soupe de légumes",
+    "description": "Une soupe réconfortante et nutritive.",
+    "category": "plat",
+    "prepTime": 15,
+    "cookTime": 25,
+    "portions": 4,
+    "difficulty": "facile",
+    "ingredients": [
+      {"name": "carottes", "quantity": 3, "unit": "piece"},
+      {"name": "poireaux", "quantity": 2, "unit": "piece"},
+      {"name": "pommes de terre", "quantity": 2, "unit": "piece"},
+      {"name": "oignon", "quantity": 1, "unit": "piece"},
+      {"name": "bouillon de légumes", "quantity": 1, "unit": "L"},
+      {"name": "huile d'olive", "quantity": 1, "unit": "c. à soupe"},
+      {"name": "sel", "quantity": null, "unit": ""},
+      {"name": "poivre", "quantity": null, "unit": ""}
+    ],
+    "steps": [
+      {"description": "Éplucher et couper tous les légumes en morceaux."},
+      {"description": "Faire revenir l'oignon dans une casserole avec l'huile d'olive."},
+      {"description": "Ajouter les autres légumes et les faire revenir 5 minutes."},
+      {"description": "Verser le bouillon de légumes et porter à ébullition."},
+      {"description": "Laisser mijoter 20 minutes à feu doux."},
+      {"description": "Mixez la soupe jusqu'à obtenir une texture lisse."},
+      {"description": "Assaisonner avec sel et poivre."}
+    ],
+    "tags": ["végétarien", "soupe", "hiver"],
+    "createdAt": "2024-08-23T00:00:00Z",
+    "updatedAt": "2024-08-23T00:00:00Z"
+  }
+]
