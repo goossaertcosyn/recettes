@@ -30,10 +30,31 @@ variable "scaleway_secret_key" {
   sensitive   = true
 }
 
+variable "access_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "secret_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "organization_id" {
+  type      = string
+  sensitive = true
+}
+
+variable "project_id" {
+  type      = string
+  sensitive = true
+}
+
 # --- Bucket S3 ---
 variable "bucket_name" {
   description = "Nom du bucket S3 (doit être globalement unique)"
   type        = string
+  default     = "recettes"
 }
 
 variable "bucket_acl" {

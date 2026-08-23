@@ -32,7 +32,7 @@ variable "index_document" {
 variable "error_document" {
   description = "Document d'erreur pour l'hébergement statique"
   type        = string
-  default     = "index.html"  # Redirige vers index.html pour les routes SPA
+  default     = "index.html" # Redirige vers index.html pour les routes SPA
 }
 
 variable "allowed_origins" {
