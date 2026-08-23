@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    scaleway = {
+      source = "scaleway/scaleway"
+    }
+  }
+}
+
 # Module pour créer un bucket S3 Scaleway avec hébergement statique
 # Utilisé pour héberger une PWA (Progressive Web App)
 
@@ -13,7 +21,6 @@ terraform {
 resource "scaleway_object_bucket" "static_website" {
   name   = var.bucket_name
   region = var.region
-  acl    = var.acl
 
   # Activer la versioning (optionnel)
   versioning {
@@ -22,11 +29,11 @@ resource "scaleway_object_bucket" "static_website" {
 
   # Configuration CORS pour permettre les requêtes depuis ton domaine
   cors_rule {
-    allowed_headers   = ["*"]
-    allowed_methods   = ["GET", "HEAD"]
-    allowed_origins   = var.allowed_origins
-    expose_headers    = ["ETag"]
-    max_age_seconds   = 3000
+    allowed_headers = ["*"]
+    allowed_methods = ["GET", "HEAD"]
+    allowed_origins = var.allowed_origins
+    expose_headers  = ["ETag"]
+    max_age_seconds = 3000
   }
 
   # Tags pour l'organisation
@@ -37,8 +44,12 @@ resource "scaleway_object_bucket" "static_website" {
 # Voir : https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/object_bucket_website_configuration
 resource "scaleway_object_bucket_website_configuration" "static_website" {
   bucket = scaleway_object_bucket.static_website.name
-  index_document = var.index_document
-  error_document = var.error_document
+  index_document {
+    suffix = var.index_document
+  }
+  error_document {
+    key = var.error_document
+  }
 }
 
 # 3. Politique de bucket pour rendre les objets publics (si ACL = private)
