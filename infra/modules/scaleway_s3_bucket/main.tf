@@ -1,6 +1,14 @@
 # Module pour créer un bucket S3 Scaleway avec hébergement statique
 # Utilisé pour héberger une PWA (Progressive Web App)
 
+terraform {
+  required_providers {
+    scaleway = {
+      source = "scaleway/scaleway"
+    }
+  }
+}
+
 # 1. Ressource pour le bucket (SANS le bloc website, car Scaleway ne supporte pas ce bloc dans scaleway_object_bucket)
 resource "scaleway_object_bucket" "static_website" {
   name   = var.bucket_name
