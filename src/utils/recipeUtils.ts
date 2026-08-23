@@ -1,4 +1,4 @@
-import { Recipe, Ingredient, MealPlanItem, ShoppingListItem } from '../types/recipe';
+import type { Recipe, Ingredient, MealPlanItem, ShoppingListItem } from '../types/recipe';
 
 /**
  * Parse une chaîne de quantité (ex: "200g", "2 pieces") en objet { quantity, unit }

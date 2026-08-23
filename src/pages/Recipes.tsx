@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useRecipeStore from '../stores/recipeStore';
-import { Recipe } from '../types/recipe';
+import type { Recipe } from '../types/recipe';
 import { formatDuration } from '../utils/recipeUtils';
 
 export default function Recipes() {

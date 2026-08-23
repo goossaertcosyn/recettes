@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useRecipeStore from '../stores/recipeStore';
 import { getRandomRecipe, generateWeeklyMealPlan } from '../utils/recipeUtils';
-import { Recipe, MealPlanItem } from '../types/recipe';
+import type { Recipe, MealPlanItem } from '../types/recipe';
 import recipesData from '../data/recipes.json';
 
 export default function Home() {

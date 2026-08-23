@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Recipe, MealPlanItem, ShoppingList, ShoppingListItem } from '../types/recipe';
+import type { Recipe, MealPlanItem, ShoppingList, ShoppingListItem } from '../types/recipe';
 import { openDB } from 'idb';
 
 // Nom de la base de données IndexedDB

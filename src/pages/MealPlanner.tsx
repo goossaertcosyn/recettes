@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useRecipeStore from '../stores/recipeStore';
-import { MealPlanItem, Recipe } from '../types/recipe';
+import type { MealPlanItem, Recipe } from '../types/recipe';
 import { generateId, generateWeeklyMealPlan, formatDuration } from '../utils/recipeUtils';
 
 export default function MealPlanner() {
