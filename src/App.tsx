@@ -106,14 +106,6 @@ function App() {
     init();
   }, [fetchRecipes, importRecipesFromJson]);
 
-  // Ne plus régénérer automatiquement au chargement - on utilise ce qui est sauvegardé
-  useEffect(() => {
-    // Si on a déjà une shopping list, ne pas régénérer
-    const savedShoppingList = localStorage.getItem('shoppingList');
-    if (!savedShoppingList && recipes.length > 0 && !isLoading && generatedRecipes.length === 0) {
-      generateRandomSelection();
-    }
-  }, [recipes, numPeople, numRecipes, isLoading, generatedRecipes.length]);
 
   // Gestion des suggestions pour l'autocomplétion
   useEffect(() => {
@@ -144,8 +136,12 @@ function App() {
     const shuffled = [...recipes].sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, Math.min(numRecipes, shuffled.length));
     setGeneratedRecipes(selected);
+  };
 
-    const mealPlans = selected.map(recipe => ({
+  const generateShoppingListFromRecipes = () => {
+    if (generatedRecipes.length === 0) return;
+
+    const mealPlans = generatedRecipes.map(recipe => ({
       id: `${recipe.id}-${Date.now()}`,
       recipeId: recipe.id,
       day: new Date(),
@@ -181,28 +177,12 @@ function App() {
     const randomRecipe = availableRecipes[Math.floor(Math.random() * availableRecipes.length)];
     newRecipes[index] = randomRecipe;
     setGeneratedRecipes(newRecipes);
+  };
 
-    const mealPlans = newRecipes.map(recipe => ({
-      id: `${recipe.id}-${Date.now()}`,
-      recipeId: recipe.id,
-      day: new Date(),
-      portions: numPeople,
-    }));
-
-    const items = generateShoppingListFromMealPlans(mealPlans, recipes);
-    // Appliquer des IDs stables
-    const itemsWithStableIds = items.map(item => ({
-      ...item,
-      id: generateStableItemId(item.name, item.unit),
-    }));
-    // Trier : éléments non cochés en premier, puis cochés
-    const sortedItems = [...itemsWithStableIds].sort((a, b) => {
-      if (a.checked !== b.checked) {
-        return a.checked ? 1 : -1;
-      }
-      return a.name.localeCompare(b.name);
-    });
-    setShoppingList(sortedItems);
+  const removeRecipe = (index: number) => {
+    const newRecipes = [...generatedRecipes];
+    newRecipes.splice(index, 1);
+    setGeneratedRecipes(newRecipes);
   };
 
   const getScaledIngredients = (recipe: Recipe) => {
@@ -407,10 +387,10 @@ function App() {
               Générer
             </button>
             <button
-              onClick={clearShoppingList}
-              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
+              onClick={generateShoppingListFromRecipes}
+              className="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
             >
-              Effacer
+              Générer la liste
             </button>
             <button
               onClick={async () => {
@@ -435,15 +415,26 @@ function App() {
                       <h3 className="text-lg font-semibold text-gray-800">{recipe.name}</h3>
                       <p className="text-sm text-gray-500">{recipe.description}</p>
                     </div>
-                    <button
-                      onClick={() => replaceRecipe(index)}
-                      className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-full transition-colors"
-                      title="Remplacer"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5" />
-                      </svg>
-                    </button>
+                    <div className="flex gap-1">
+                      <button
+                        onClick={() => replaceRecipe(index)}
+                        className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-full transition-colors"
+                        title="Remplacer"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => removeRecipe(index)}
+                        className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
+                        title="Supprimer"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
                   <div className="mb-3">
@@ -562,6 +553,12 @@ function App() {
               Aucune liste de courses générée
             </p>
           )}
+          <button
+            onClick={clearShoppingList}
+            className="mt-4 w-full px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+          >
+            Vider la liste de courses
+          </button>
         </section>
       </div>
     </div>
