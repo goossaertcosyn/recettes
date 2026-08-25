@@ -15,18 +15,18 @@ export interface Recipe {
   id: string;
   name: string;
   description?: string;
-  category: string; // 'entrée', 'plat', 'dessert', 'accompagnement', etc.
+  category: string | null; // 'entrée', 'plat', 'dessert', 'accompagnement', etc.
   prepTime: number; // en minutes
   cookTime?: number; // en minutes (optionnel)
   portions: number; // portions de base
-  difficulty?: 'facile' | 'moyenne' | 'difficile';
+  difficulty?: string;
   ingredients: Ingredient[];
   steps: Step[];
   image?: string; // URL ou base64
   tags?: string[]; // ex : ['végétarien', 'rapide', 'été']
   source?: string; // URL ou nom du livre de recettes
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: Date | string;
+  updatedAt: Date | string;
 }
 
 // Type pour une recette dans le menu hebdomadaire
@@ -54,5 +54,5 @@ export interface ShoppingList {
   id: string;
   name: string; // ex : "Liste du 25/08"
   items: ShoppingListItem[];
-  createdAt: Date;
+  createdAt: Date | string;
 }
