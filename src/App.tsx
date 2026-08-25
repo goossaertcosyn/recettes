@@ -1,13 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useRecipeStore from './stores/recipeStore';
 import type { Recipe, ShoppingListItem } from './types/recipe';
 import recipesData from './data/recipes.json';
+import {
+  getFoodSuggestions,
+  type FoodReferenceItem,
+} from './data/foodReference';
 
 // Fonction pour générer un ID stable basé sur le nom et l'unité
 const generateStableItemId = (name: string, unit: string): string => {
   const normalizedName = name.toLowerCase().trim();
   const normalizedUnit = unit.toLowerCase().trim();
   return `${normalizedName}-${normalizedUnit}`;
+};
+
+// Fonction pour formater l'affichage d'un ingrédient (ne pas afficher l'unité si vide)
+const formatIngredientDisplay = (item: { name: string; quantity: number | null; unit: string }): string => {
+  const parts: string[] = [];
+  
+  if (item.quantity !== null) {
+    parts.push(parseFloat(item.quantity.toString()).toFixed(1));
+  }
+  
+  // Ne pas afficher l'unité si elle est vide ou "pièce" ou ""
+  if (item.unit && item.unit !== '' && item.unit.toLowerCase() !== 'pièce' && item.unit.toLowerCase() !== 'piece') {
+    parts.push(item.unit);
+  }
+  
+  parts.push(item.name);
+  return parts.join(' ');
 };
 
 function App() {
@@ -17,6 +38,15 @@ function App() {
   const [generatedRecipes, setGeneratedRecipes] = useState<Recipe[]>([]);
   const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  
+  // État pour l'ajout manuel d'éléments
+  const [newItemName, setNewItemName] = useState<string>('');
+  const [newItemQuantity, setNewItemQuantity] = useState<string>('');
+  const [newItemUnit, setNewItemUnit] = useState<string>('');
+  const [suggestions, setSuggestions] = useState<FoodReferenceItem[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
+  const suggestionsRef = useRef<HTMLUListElement>(null);
 
   // Charger la shopping list complète depuis localStorage au chargement initial
   useEffect(() => {
@@ -84,6 +114,29 @@ function App() {
       generateRandomSelection();
     }
   }, [recipes, numPeople, numRecipes, isLoading, generatedRecipes.length]);
+
+  // Gestion des suggestions pour l'autocomplétion
+  useEffect(() => {
+    if (newItemName.length > 1) {
+      const suggestions = getFoodSuggestions(newItemName, 10);
+      setSuggestions(suggestions);
+      setShowSuggestions(suggestions.length > 0);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  }, [newItemName]);
+
+  // Fermer les suggestions quand on clique ailleurs
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const generateRandomSelection = () => {
     if (recipes.length === 0) return;
@@ -198,6 +251,108 @@ function App() {
     localStorage.removeItem('generatedRecipes');
   };
 
+  // Gestion de l'ajout manuel d'éléments
+  const handleNewItemNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewItemName(e.target.value);
+    setSelectedSuggestionIndex(-1);
+  };
+
+  const handleNewItemQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewItemQuantity(e.target.value);
+  };
+
+  const handleNewItemUnitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewItemUnit(e.target.value);
+  };
+
+  const handleSelectSuggestion = (suggestion: FoodReferenceItem) => {
+    setNewItemName(suggestion.name);
+    setNewItemUnit(suggestion.defaultUnit);
+    setShowSuggestions(false);
+    setSuggestions([]);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (suggestions.length === 0) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedSuggestionIndex(prev => 
+        prev < suggestions.length - 1 ? prev + 1 : prev
+      );
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedSuggestionIndex(prev => prev > 0 ? prev - 1 : 0);
+    } else if (e.key === 'Enter' && selectedSuggestionIndex >= 0) {
+      e.preventDefault();
+      handleSelectSuggestion(suggestions[selectedSuggestionIndex]);
+    }
+  };
+
+  const addManualItem = () => {
+    if (!newItemName.trim()) return;
+
+    const newItem: ShoppingListItem = {
+      id: generateStableItemId(newItemName, newItemUnit),
+      name: newItemName.trim(),
+      quantity: newItemQuantity ? parseFloat(newItemQuantity) : null,
+      unit: newItemUnit || '',
+      checked: false,
+    };
+
+    // Vérifier si un élément similaire existe déjà (même nom et unité)
+    const existingIndex = shoppingList.findIndex(item => 
+      item.name.toLowerCase() === newItem.name.toLowerCase() &&
+      item.unit.toLowerCase() === newItem.unit.toLowerCase()
+    );
+
+    if (existingIndex >= 0) {
+      // Mettre à jour la quantité si l'élément existe
+      const updatedList = [...shoppingList];
+      const existingItem = updatedList[existingIndex];
+      
+      if (existingItem.quantity !== null && newItem.quantity !== null) {
+        existingItem.quantity += newItem.quantity;
+      } else if (newItem.quantity !== null) {
+        existingItem.quantity = newItem.quantity;
+      }
+      
+      // Trier : éléments non cochés en premier, puis cochés
+      const sortedList = [...updatedList].sort((a, b) => {
+        if (a.checked !== b.checked) {
+          return a.checked ? 1 : -1;
+        }
+        return a.name.localeCompare(b.name);
+      });
+      setShoppingList(sortedList);
+    } else {
+      // Ajouter le nouvel élément
+      const updatedList = [...shoppingList, newItem];
+      // Trier : éléments non cochés en premier, puis cochés
+      const sortedList = [...updatedList].sort((a, b) => {
+        if (a.checked !== b.checked) {
+          return a.checked ? 1 : -1;
+        }
+        return a.name.localeCompare(b.name);
+      });
+      setShoppingList(sortedList);
+    }
+
+    // Réinitialiser les champs
+    setNewItemName('');
+    setNewItemQuantity('');
+    setNewItemUnit('');
+    setSuggestions([]);
+    setShowSuggestions(false);
+  };
+
+  const handleAddItemKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addManualItem();
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -286,9 +441,7 @@ function App() {
                     <ul className="text-sm text-gray-600 space-y-0.5">
                       {scaledIngredients.map((ingredient, i) => (
                         <li key={i}>
-                          {ingredient.quantity !== null ?
-                            `${parseFloat(ingredient.quantity.toString()).toFixed(1)} ${ingredient.unit} ` : ''}
-                          {ingredient.name}
+                          {formatIngredientDisplay(ingredient)}
                         </li>
                       ))}
                     </ul>
@@ -314,6 +467,65 @@ function App() {
             Liste de courses
           </h2>
           
+          {/* Champ pour ajouter manuellement un élément */}
+          <div className="mb-4">
+            <div className="flex flex-col gap-2">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={newItemName}
+                  onChange={handleNewItemNameChange}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Nom de l'aliment..."
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                {showSuggestions && suggestions.length > 0 && (
+                  <ul
+                    ref={suggestionsRef}
+                    className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-y-auto"
+                  >
+                    {suggestions.map((suggestion, index) => (
+                      <li
+                        key={suggestion.id}
+                        onClick={() => handleSelectSuggestion(suggestion)}
+                        className={`px-3 py-2 cursor-pointer hover:bg-indigo-50 ${
+                          index === selectedSuggestionIndex ? 'bg-indigo-50' : ''
+                        }`}
+                      >
+                        <div className="text-sm text-gray-700">{suggestion.name}</div>
+                        <div className="text-xs text-gray-500">{suggestion.category}</div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={newItemQuantity}
+                  onChange={handleNewItemQuantityChange}
+                  onKeyDown={handleAddItemKeyPress}
+                  placeholder="Quantité"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                <input
+                  type="text"
+                  value={newItemUnit}
+                  onChange={handleNewItemUnitChange}
+                  onKeyDown={handleAddItemKeyPress}
+                  placeholder="Unité"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                <button
+                  onClick={addManualItem}
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors whitespace-nowrap"
+                >
+                  Ajouter
+                </button>
+              </div>
+            </div>
+          </div>
+          
           {shoppingList.length > 0 ? (
             <div className="space-y-2">
               {shoppingList.map((item, index) => (
@@ -329,9 +541,7 @@ function App() {
                       className="rounded text-indigo-600 focus:ring-indigo-500"
                     />
                     <span className="text-gray-700">
-                      {item.quantity !== null ?
-                        `${parseFloat(item.quantity.toString()).toFixed(1)} ${item.unit} ` : ''}
-                      {item.name}
+                      {formatIngredientDisplay(item)}
                     </span>
                   </div>
                 </div>
