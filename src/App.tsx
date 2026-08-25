@@ -68,7 +68,7 @@ function App() {
     const init = async () => {
       const storedRecipes = await useRecipeStore.getState().getAllRecipes();
       if (storedRecipes.length === 0) {
-        await importRecipesFromJson((recipesData as unknown as { recipes: Recipe[] }).recipes);
+        await importRecipesFromJson((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
       }
       await fetchRecipes();
       setIsLoading(false);
@@ -259,7 +259,7 @@ function App() {
             </button>
             <button
               onClick={async () => {
-                await resetApp((recipesData as unknown as { recipes: Recipe[] }).recipes);
+                await resetApp((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
                 setGeneratedRecipes([]);
                 setShoppingList([]);
               }}
