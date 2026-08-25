@@ -47,6 +47,13 @@ function App() {
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
   const suggestionsRef = useRef<HTMLUListElement>(null);
+  
+  // État pour la modale de recherche de recettes
+  const [showSearchModal, setShowSearchModal] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]);
+  const [replaceIndex, setReplaceIndex] = useState<number | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   // Charger la shopping list complète depuis localStorage au chargement initial
   useEffect(() => {
@@ -106,7 +113,6 @@ function App() {
     init();
   }, [fetchRecipes, importRecipesFromJson]);
 
-
   // Gestion des suggestions pour l'autocomplétion
   useEffect(() => {
     if (newItemName.length > 1) {
@@ -119,11 +125,32 @@ function App() {
     }
   }, [newItemName]);
 
-  // Fermer les suggestions quand on clique ailleurs
+  // Filtrer les recettes pour la modale de recherche
+  useEffect(() => {
+    if (showSearchModal) {
+      const query = searchQuery.toLowerCase().trim();
+      if (query === '') {
+        setFilteredRecipes(recipes);
+      } else {
+        const filtered = recipes.filter(recipe => 
+          recipe.name.toLowerCase().includes(query) ||
+          recipe.description?.toLowerCase().includes(query) ||
+          recipe.ingredients.some(ing => ing.name.toLowerCase().includes(query)) ||
+          recipe.tags?.some(tag => tag.toLowerCase().includes(query))
+        );
+        setFilteredRecipes(filtered);
+      }
+    }
+  }, [searchQuery, recipes, showSearchModal]);
+
+  // Fermer les suggestions et la modale quand on clique ailleurs
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
+      }
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        closeSearchModal();
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -183,6 +210,19 @@ function App() {
     const newRecipes = [...generatedRecipes];
     newRecipes.splice(index, 1);
     setGeneratedRecipes(newRecipes);
+  };
+
+  const addRecipeToSelection = (recipe: Recipe) => {
+    if (replaceIndex !== null) {
+      // Remplacer la recette à l'index spécifié
+      const newRecipes = [...generatedRecipes];
+      newRecipes[replaceIndex] = recipe;
+      setGeneratedRecipes(newRecipes);
+    } else if (!generatedRecipes.some(r => r.id === recipe.id)) {
+      // Ajouter la recette à la sélection
+      setGeneratedRecipes([...generatedRecipes, recipe]);
+    }
+    closeSearchModal();
   };
 
   const getScaledIngredients = (recipe: Recipe) => {
@@ -333,6 +373,19 @@ function App() {
     }
   };
 
+  const openSearchModal = (index?: number) => {
+    setShowSearchModal(true);
+    setSearchQuery('');
+    setFilteredRecipes(recipes);
+    setReplaceIndex(index ?? null);
+  };
+
+  const closeSearchModal = () => {
+    setShowSearchModal(false);
+    setSearchQuery('');
+    setReplaceIndex(null);
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -342,18 +395,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4 space-y-8">
+    <div className="min-h-screen bg-gray-50 py-4 md:py-8">
+      <div className="max-w-4xl mx-auto px-4 space-y-6">
         
         {/* Generateur de recettes */}
-        <section className="bg-white rounded-lg shadow p-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        <section className="bg-white rounded-lg shadow p-4 md:p-6">
+          <h1 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">
             Recettes
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                 Nombre de personnes
               </label>
               <input
@@ -361,11 +414,11 @@ function App() {
                 value={numPeople}
                 onChange={handleNumPeopleChange}
                 min="1"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1 md:mb-2">
                 Nombre de recettes
               </label>
               <input
@@ -374,23 +427,33 @@ function App() {
                 onChange={handleNumRecipesChange}
                 min="1"
                 max={recipes.length}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"
               />
             </div>
           </div>
 
-          <div className="flex gap-4 mb-6">
+          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
             <button
               onClick={generateRandomSelection}
-              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors text-sm font-medium"
             >
               Générer
             </button>
             <button
               onClick={generateShoppingListFromRecipes}
-              className="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors text-sm font-medium"
             >
               Générer la liste
+            </button>
+            <button
+              onClick={() => openSearchModal()}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium flex items-center gap-1 md:gap-2"
+              title="Rechercher des recettes"
+            >
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span className="hidden sm:inline">Rechercher</span>
             </button>
             <button
               onClick={async () => {
@@ -398,37 +461,51 @@ function App() {
                 setGeneratedRecipes([]);
                 setShoppingList([]);
               }}
-              className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+              className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-sm font-medium"
             >
               Reset App
             </button>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {generatedRecipes.map((recipe, index) => {
               const scaledIngredients = getScaledIngredients(recipe);
               
               return (
-                <div key={`${recipe.id}-${index}`} className="border border-gray-200 rounded-lg p-4">
-                  <div className="flex justify-between items-start mb-3">
+                <div key={`${recipe.id}-${index}`} className="border border-gray-200 rounded-lg p-3 md:p-4">
+                  <div className="flex justify-between items-start mb-2 md:mb-3">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-800">{recipe.name}</h3>
-                      <p className="text-sm text-gray-500">{recipe.description}</p>
+                      {recipe.description && (
+                        <p className="text-sm text-gray-500">{recipe.description}</p>
+                      )}
                     </div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-0.5 md:gap-1">
                       <button
                         onClick={() => replaceRecipe(index)}
                         className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-full transition-colors"
                         title="Remplacer"
+                        aria-label="Remplacer"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5" />
                         </svg>
                       </button>
                       <button
+                        onClick={() => openSearchModal(index)}
+                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
+                        title="Chercher une recette"
+                        aria-label="Chercher une recette"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </button>
+                      <button
                         onClick={() => removeRecipe(index)}
                         className="p-2 text-red-600 hover:bg-red-50 rounded-full transition-colors"
                         title="Supprimer"
+                        aria-label="Supprimer"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -437,7 +514,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="mb-3">
+                  <div className="mb-2 md:mb-3">
                     <h4 className="font-medium text-gray-700 mb-1 text-sm">Ingrédients</h4>
                     <ul className="text-sm text-gray-600 space-y-0.5">
                       {scaledIngredients.map((ingredient, i) => (
@@ -463,13 +540,13 @@ function App() {
         </section>
 
         {/* Liste de courses */}
-        <section className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">
+        <section className="bg-white rounded-lg shadow p-4 md:p-6">
+          <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-3 md:mb-4">
             Liste de courses
           </h2>
           
           {/* Champ pour ajouter manuellement un élément */}
-          <div className="mb-4">
+          <div className="mb-3 md:mb-4">
             <div className="flex flex-col gap-2">
               <div className="relative">
                 <input
@@ -478,12 +555,12 @@ function App() {
                   onChange={handleNewItemNameChange}
                   onKeyDown={handleKeyDown}
                   placeholder="Nom de l'aliment..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"
                 />
                 {showSuggestions && suggestions.length > 0 && (
                   <ul
                     ref={suggestionsRef}
-                    className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-y-auto"
+                    className="absolute z-20 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-60 overflow-y-auto"
                   >
                     {suggestions.map((suggestion, index) => (
                       <li
@@ -500,14 +577,14 @@ function App() {
                   </ul>
                 )}
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <input
                   type="text"
                   value={newItemQuantity}
                   onChange={handleNewItemQuantityChange}
                   onKeyDown={handleAddItemKeyPress}
                   placeholder="Quantité"
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="flex-1 min-w-[100px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"
                 />
                 <input
                   type="text"
@@ -515,11 +592,11 @@ function App() {
                   onChange={handleNewItemUnitChange}
                   onKeyDown={handleAddItemKeyPress}
                   placeholder="Unité"
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="flex-1 min-w-[100px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"
                 />
                 <button
                   onClick={addManualItem}
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors whitespace-nowrap"
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors text-sm font-medium whitespace-nowrap"
                 >
                   Ajouter
                 </button>
@@ -528,20 +605,20 @@ function App() {
           </div>
           
           {shoppingList.length > 0 ? (
-            <div className="space-y-2">
+            <div className="space-y-1 md:space-y-2">
               {shoppingList.map((item, index) => (
                 <div
                   key={`${item.id}-${index}`}
-                  className="flex items-center justify-between p-3 border-b border-gray-100 last:border-0"
+                  className="flex items-center justify-between p-2 md:p-3 border-b border-gray-100 last:border-0"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 md:gap-3">
                     <input
                       type="checkbox"
                       checked={item.checked || false}
                       onChange={() => handleToggleChecked(item.id)}
-                      className="rounded text-indigo-600 focus:ring-indigo-500"
+                      className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4 md:w-5 md:h-5"
                     />
-                    <span className="text-gray-700">
+                    <span className="text-sm md:text-base text-gray-700">
                       {formatIngredientDisplay(item)}
                     </span>
                   </div>
@@ -549,18 +626,109 @@ function App() {
               ))}
             </div>
           ) : (
-            <p className="text-gray-500 text-center py-4">
+            <p className="text-gray-500 text-center py-3 md:py-4">
               Aucune liste de courses générée
             </p>
           )}
+          
           <button
             onClick={clearShoppingList}
-            className="mt-4 w-full px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+            className="mt-3 md:mt-4 w-full px-4 md:px-6 py-2 md:py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors text-sm font-medium"
           >
             Vider la liste de courses
           </button>
         </section>
       </div>
+
+      {/* Modale de recherche de recettes */}
+      {showSearchModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 md:p-4">
+          <div 
+            ref={modalRef}
+            className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+          >
+            <div className="p-4 md:p-6">
+              <div className="flex justify-between items-center mb-3 md:mb-4">
+                <h2 className="text-lg md:text-xl font-bold text-gray-800">
+                  {replaceIndex !== null ? 'Remplacer une recette' : 'Rechercher des recettes'}
+                </h2>
+                <button
+                  onClick={closeSearchModal}
+                  className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
+                  title="Fermer"
+                  aria-label="Fermer"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <div className="mb-3 md:mb-4">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Rechercher par nom, ingrédient ou tag..."
+                  className="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-base md:text-lg"
+                  autoFocus
+                />
+              </div>
+
+              {filteredRecipes.length === 0 ? (
+                <p className="text-gray-500 text-center py-6 md:py-8">
+                  Aucune recette trouvée
+                </p>
+              ) : (
+                <div className="space-y-2 md:space-y-3">
+                  {filteredRecipes.map((recipe) => (
+                    <div 
+                      key={recipe.id}
+                      onClick={() => addRecipeToSelection(recipe)}
+                      className="p-3 md:p-4 border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-indigo-50 cursor-pointer transition-colors"
+                    >
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <h3 className="font-semibold text-gray-800 mb-1 text-sm md:text-base">{recipe.name}</h3>
+                          {recipe.description && (
+                            <p className="text-sm text-gray-600 mb-1 md:mb-2">{recipe.description}</p>
+                          )}
+                          {recipe.tags && recipe.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-1">
+                              {recipe.tags?.slice(0, 3).map(tag => (
+                                <span key={tag} className="px-2 py-1 bg-gray-100 text-xs text-gray-600 rounded-full">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        <svg className="w-5 h-5 text-indigo-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </div>
+                      <div className="mt-1 md:mt-2">
+                        <p className="text-xs md:text-sm text-gray-500">
+                          {recipe.ingredients.length} ingrédients • {recipe.prepTime} min
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-4 md:mt-6">
+                <button
+                  onClick={closeSearchModal}
+                  className="w-full px-4 md:px-6 py-2 md:py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors text-sm font-medium"
+                >
+                  Annuler
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
