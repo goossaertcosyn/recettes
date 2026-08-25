@@ -415,8 +415,7 @@ function App() {
             <button
               onClick={async () => {
                 await resetApp((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
-                setGeneratedRecipes([]);
-                setShoppingList([]);
+                await fetchRecipes();
               }}
               className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
             >
