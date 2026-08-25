@@ -1,551 +1,3179 @@
 [
-  {
-    "recipes": [
-      {
-        "id": "9aeabshdhmcm2hb90xy9",
+    {
+        "id": "1",
+        "name": "Nouilles champignons & sésame",
+        "description": "Ça change des simples pâtes crème-champignons !",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Nouilles de riz",
+                "quantity": 240,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris (frais)",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Huile de sésame",
+                "quantity": 3,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Sauce soja salée",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Graines de sésame",
+                "quantity": 0.75,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Gingembre (frais)",
+                "quantity": 2,
+                "unit": "cm"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Lavez, puis coupes les champignons en rondelles."
+            },
+            {
+                "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu vif. Ajoutez-y les champignons et le gingembre râpé. Faites revenir le tout, jusqu’à ce que les champignons soient bien dorés."
+            },
+            {
+                "description": "Pendant ce temps, faites cuire les nouilles selon les indications du paquet. Égouttez-les en fin de cuisson."
+            },
+            {
+                "description": "Ajoutez les nouilles avec la sauce soja, l'huile de sésame et les graines de sésame dans la poêle. Laissez cuire 1 à 2 minutes supplémentaires, à feu doux, en mélangeant."
+            },
+            {
+                "description": "Servez le tout dans une assiette. Parsemez de graines de sésame, s'il vous en reste. C'est prêt !"
+            }
+        ],
+        "tags": [
+            "asiatique",
+            "nouilles",
+            "rapide",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:51:56.071129Z",
+        "updatedAt": "2026-08-25T07:51:56.071136Z"
+    },
+    {
+        "id": "2",
+        "name": "Risotto aux morilles & mascarpone",
+        "description": "Le risotto le plus chic de notre répertoire !",
+        "category": null,
+        "prepTime": 8,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Riz (Arborio)",
+                "quantity": 210,
+                "unit": "g"
+            },
+            {
+                "name": "Morilles (séchées)",
+                "quantity": 15,
+                "unit": "g"
+            },
+            {
+                "name": "Mascarpone",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Échalote",
+                "quantity": 1.5,
+                "unit": "pièce"
+            },
+            {
+                "name": "Parmesan (râpé)",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Vin blanc",
+                "quantity": 60,
+                "unit": "ml"
+            },
+            {
+                "name": "Bouillon de légumes (cube)",
+                "quantity": 0.75,
+                "unit": "pièce"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 3,
+                "unit": "cuillère à café"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Si vous utilisez des morilles séchées, réhydratez-les. Dans un bol d'eau chaude, ajoutez les morilles séchées et réservez 30 minutes. Égouttez-les."
+            },
+            {
+                "description": "Pendant ce temps, réhydratez le bouillon dans 250 ml d'eau chaude par personne."
+            },
+            {
+                "description": "Épluchez puis ciselez les échalotes. Réservez-en un tiers pour la cuisson des morilles."
+            },
+            {
+                "description": "Faites fondre une noisette de beurre dans une casserole, sur feu vif. Ajoutez les échalotes et faites-les revenir 1 minute."
+            },
+            {
+                "description": "Ajoutez le riz et faites-le dorer 2 minutes, en mélangeant. Déglacez au vin blanc et mélangez bien, jusqu'à absorption."
+            },
+            {
+                "description": "Ajoutez le bouillon petit à petit. Mélangez à chaque ajout et laissez le bouillon s'évaporer avant de recommencer l'opération, jusqu'à épuisement du bouillon."
+            },
+            {
+                "description": "En parallèle, faites fondre une noisette de beurre dans une poêle, sur feu moyen. Ajoutez les morilles réhydratées et le reste des échalotes. Faites-les revenir 5 à 6 minutes. Déglacez avec un filet de vin blanc, s'il vous en reste, puis poursuivez la cuisson 2 minutes."
+            },
+            {
+                "description": "Une fois le riz cuit, ajoutez le mascarpone et le parmesan râpé. Ré-assaisonnez selon vos goûts et poursuivez la cuisson 1 minute en mélangeant."
+            },
+            {
+                "description": "Servez le risotto aux morilles dans une assiette. Parsemez d'un filet d'huile d'olive et de parmesan râpé. Re-assaisonnez selon vos goûts. C'est prêt !"
+            }
+        ],
+        "tags": [
+            "italien",
+            "risotto",
+            "chic",
+            "morilles"
+        ],
+        "createdAt": "2026-08-25T07:51:56.071316Z",
+        "updatedAt": "2026-08-25T07:51:56.071320Z"
+    },
+    {
+        "id": "3",
+        "name": "Curry courgette & petits pois",
+        "description": "Un curry veggie tout doux servi avec des nouilles",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 8,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Nouilles de riz",
+                "quantity": 180,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 1.5,
+                "unit": "pièce"
+            },
+            {
+                "name": "Petits pois (surgelés)",
+                "quantity": 210,
+                "unit": "g"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 150,
+                "unit": "ml"
+            },
+            {
+                "name": "Curry (poudre)",
+                "quantity": 3,
+                "unit": "pincée"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1.5,
+                "unit": "gousse"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Lavez puis coupez les courgettes en demi lunes."
+            },
+            {
+                "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu vif. Ajoutez les courgettes, le curry et l'ail râpé. Faites-les revenir 4 à 5 minutes, en remuant. Assaisonnez d'herbes de Provence ou de thym, si vous en avez."
+            },
+            {
+                "description": "Baissez le feu, puis ajoutez les petits pois et le lait de coco. Salez, poivrez et mélangez, puis laissez mijoter 5 à 6 minutes."
+            },
+            {
+                "description": "Pendant ce temps, dans une casserole d'eau bouillante salée, faites cuire les nouilles de riz selon les indications du paquet. Une fois cuites, égouttez-les."
+            },
+            {
+                "description": "Ajoutez les nouilles égouttées dans la poêle avec les légumes et mélangez. Servez le tout dans un bol et ré-assaisonnez selon vos goûts. C’est prêt !"
+            }
+        ],
+        "tags": [
+            "curry",
+            "végétarien",
+            "rapide",
+            "asiatique"
+        ],
+        "createdAt": "2026-08-25T07:51:56.071422Z",
+        "updatedAt": "2026-08-25T07:51:56.071424Z"
+    },
+    {
+        "id": "4",
+        "name": "Salade de pois chiches & haricots verts",
+        "description": "Un peu de fraîcheur dans ce monde de brutes !",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Haricot vert (frais)",
+                "quantity": 240,
+                "unit": "g"
+            },
+            {
+                "name": "Feta",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Quinoa (cru)",
+                "quantity": 180,
+                "unit": "g"
+            },
+            {
+                "name": "Pois chiches (cuits)",
+                "quantity": 180,
+                "unit": "g"
+            },
+            {
+                "name": "Citron jaune",
+                "quantity": 3,
+                "unit": "quartier"
+            },
+            {
+                "name": "Ciboulette",
+                "quantity": 0.3,
+                "unit": "botte"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 3,
+                "unit": "cuillère à café"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Dans une casserole d'eau bouillante, faites cuire le quinoa selon les indications du paquet."
+            },
+            {
+                "description": "Dans une casserole d'eau bouillante, faites cuire les haricots verts 6 minutes. Une fois égouttés, placez-les dans un bol d'eau froide afin de stopper la cuisson."
+            },
+            {
+                "description": "Égouttez et rincez les pois chiches. Dans une assiette, servez le quinoa avec les haricots verts, les pois chiches. Émiettez la feta sur le dessus. (Optionnel : ajoutez de la ciboulette)."
+            },
+            {
+                "description": "Assaisonnez avec un filet d'huile d'olive et un filet de jus de citron. Salez, poivrez. C'est prêt !"
+            }
+        ],
+        "tags": [
+            "salade",
+            "végétarien",
+            "fraîcheur",
+            "pois chiches"
+        ],
+        "createdAt": "2026-08-25T07:51:56.071516Z",
+        "updatedAt": "2026-08-25T07:51:56.071518Z"
+    },
+    {
+        "id": "5",
+        "name": "Salade de patate douce rôtie au air-fryer",
+        "description": "Une salade complète, simple & pleine de goût !",
+        "category": null,
+        "prepTime": 8,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Patate douce",
+                "quantity": 600,
+                "unit": "g"
+            },
+            {
+                "name": "Feta",
+                "quantity": 120,
+                "unit": "g"
+            },
+            {
+                "name": "Salade (roquette)",
+                "quantity": 3,
+                "unit": "poignée"
+            },
+            {
+                "name": "Noix de pécan",
+                "quantity": 60,
+                "unit": "g"
+            },
+            {
+                "name": "Moutarde à l'ancienne",
+                "quantity": 2,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Vinaigre balsamique",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 6,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Épluchez puis coupez les patates douces en petits cubes."
+            },
+            {
+                "description": "Disposez les morceaux de patate douce dans le panier du air-fryer avec la grille. Ajoutez un filet d'huile d'olive, salez et poivrez. Mélangez et faites-les cuire au air-fryer 20 minutes à 200°C, en mélangeant à mi-cuisson."
+            },
+            {
+                "description": "Pendant ce temps, concassez grossièrement les noix de pécan."
+            },
+            {
+                "description": "Préparez la vinaigrette. Dans un bol, mélangez : le vinaigre balsamique, la moutarde à l'ancienne et une cuillère à soupe d'huile d'olive par personne. Salez et poivrez."
+            },
+            {
+                "description": "Une fois les patates douces tendres et bien dorées, sortez-les du air-fryer."
+            },
+            {
+                "description": "Servez la roquette dans une assiette avec les patates douces rôties, la feta émiettée et les noix de pécan concassées. Versez la vinaigrette par-dessus. C'est prêt !"
+            }
+        ],
+        "tags": [
+            "salade",
+            "air-fryer",
+            "patate douce",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:51:56.071611Z",
+        "updatedAt": "2026-08-25T07:51:56.071613Z"
+    },
+    {
+        "id": "6",
+        "name": "Fondue de poireaux et œuf",
+        "description": "Une recette simple et réconfortante pour un repas léger.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Poireaux",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Œufs",
+                "quantity": 4,
+                "unit": "pièce"
+            },
+            {
+                "name": "Crème fraîche",
+                "quantity": 20,
+                "unit": "cl"
+            },
+            {
+                "name": "Beurre",
+                "quantity": 30,
+                "unit": "g"
+            },
+            {
+                "name": "Sel",
+                "quantity": null,
+                "unit": ""
+            },
+            {
+                "name": "Poivre",
+                "quantity": null,
+                "unit": ""
+            }
+        ],
+        "steps": [
+            {
+                "description": "Lavez et coupez les poireaux en rondelles."
+            },
+            {
+                "description": "Faites fondre le beurre dans une poêle, ajoutez les poireaux et faites-les revenir à feu doux pendant 10 minutes."
+            },
+            {
+                "description": "Ajoutez la crème fraîche, salez et poivrez. Mélangez bien."
+            },
+            {
+                "description": "Faites des puits dans la fondue de poireaux et cassez un œuf dans chaque puits."
+            },
+            {
+                "description": "Couvrez et laissez cuire à feu doux jusqu'à ce que les œufs soient pris."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "poireaux",
+            "œufs",
+            "rapide",
+            "léger"
+        ],
+        "createdAt": "2026-08-25T07:53:43.440654Z",
+        "updatedAt": "2026-08-25T07:53:43.440661Z"
+    },
+    {
+        "id": "7",
+        "name": "Spaghetti et bolognaise veggie",
+        "description": "Une version végétarienne de la classique bolognaise.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Protéines de soja texturées",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Carotte",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les spaghetti dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Émincez l'oignon, l'ail et la carotte."
+            },
+            {
+                "description": "Faites revenir l'oignon, l'ail et la carotte dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les protéines de soja texturées réhydratées et la sauce tomate. Laissez mijoter 15 minutes."
+            },
+            {
+                "description": "Servez la sauce bolognaise veggie sur les spaghetti."
+            }
+        ],
+        "tags": [
+            "pâtes",
+            "végétarien",
+            "bolognaise",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:53:43.440765Z",
+        "updatedAt": "2026-08-25T07:53:43.440767Z"
+    },
+    {
+        "id": "8",
+        "name": "Tofu, cacahuètes, riz et brocoli",
+        "description": "Un plat équilibré et riche en saveurs.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Tofu",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Cacahuètes",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Riz",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Brocoli",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce soja",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Huile de sésame",
+                "quantity": 1,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire le riz selon les instructions du paquet."
+            },
+            {
+                "description": "Coupez le tofu en dés et faites-le revenir dans une poêle avec de l'huile de sésame."
+            },
+            {
+                "description": "Ajoutez les cacahuètes et le brocoli coupé en fleurettes. Faites revenir 5 minutes."
+            },
+            {
+                "description": "Ajoutez la sauce soja et laissez cuire encore 5 minutes."
+            },
+            {
+                "description": "Servez avec le riz."
+            }
+        ],
+        "tags": [
+            "asiatique",
+            "tofu",
+            "riz",
+            "brocoli"
+        ],
+        "createdAt": "2026-08-25T07:53:43.440860Z",
+        "updatedAt": "2026-08-25T07:53:43.440862Z"
+    },
+    {
+        "id": "9",
+        "name": "Chakchouka aux lentilles et poireaux",
+        "description": "Un plat nord-africain revisité avec des lentilles.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Lentilles vertes",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Poireaux",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Tomates",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Cumin",
+                "quantity": 1,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Paprika",
+                "quantity": 1,
+                "unit": "cuillère à café"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Émincez les poireaux, l'oignon et l'ail."
+            },
+            {
+                "description": "Faites revenir l'oignon, l'ail et les poireaux dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les tomates coupées en dés, le cumin et le paprika. Laissez mijoter 10 minutes."
+            },
+            {
+                "description": "Ajoutez les lentilles égouttées et mélangez bien. Laissez cuire encore 5 minutes."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "chakchouka",
+            "lentilles",
+            "poireaux",
+            "nord-africain"
+        ],
+        "createdAt": "2026-08-25T07:53:43.440956Z",
+        "updatedAt": "2026-08-25T07:53:43.440957Z"
+    },
+    {
+        "id": "10",
+        "name": "Sweet potatoes et hummus bowl",
+        "description": "Un bol gourmand et sain.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Patate douce",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Hummus",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Quinoa",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Avocat",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Tomates cerises",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Épluchez et coupez les patates douces en dés. Faites-les rôtir au four à 200°C pendant 20 minutes."
+            },
+            {
+                "description": "Faites cuire le quinoa selon les instructions du paquet."
+            },
+            {
+                "description": "Dans un bol, disposez le quinoa, les patates douces rôties, l'avocat coupé en tranches et les tomates cerises."
+            },
+            {
+                "description": "Ajoutez le hummus et arrosez d'un filet d'huile d'olive."
+            },
+            {
+                "description": "Servez immédiatement."
+            }
+        ],
+        "tags": [
+            "bowl",
+            "patate douce",
+            "hummus",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:53:43.441072Z",
+        "updatedAt": "2026-08-25T07:53:43.441075Z"
+    },
+    {
+        "id": "11",
+        "name": "Gnocchi au pesto rouge, chèvre et pignons",
+        "description": "Une recette savoureuse et colorée.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Gnocchi",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Pesto rouge",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Fromage de chèvre",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Pignons de pin",
+                "quantity": 30,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les gnocchi dans de l'eau bouillante salée selon les instructions du paquet. Égouttez."
+            },
+            {
+                "description": "Dans une poêle, faites revenir les gnocchi avec un filet d'huile d'olive."
+            },
+            {
+                "description": "Ajoutez le pesto rouge et mélangez bien."
+            },
+            {
+                "description": "Ajoutez le fromage de chèvre émietté et les pignons de pin."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "gnocchi",
+            "pesto",
+            "chèvre",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:54:19.676712Z",
+        "updatedAt": "2026-08-25T07:54:19.676734Z"
+    },
+    {
+        "id": "12",
         "name": "Pâtes crémeuses tomates & burrata",
         "description": "Un plat de pâtes pour un repas qui fait rêver !",
-        "category": "plat",
+        "category": null,
         "prepTime": 4,
         "cookTime": 12,
-        "portions": 3,
+        "portions": 2,
         "difficulty": "Très facile",
         "ingredients": [
-          {
-            "name": "Pâtes (Linguine)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Sauce tomate (basilic)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Oignon jaune",
-            "quantity": 0.75,
-            "unit": ""
-          },
-          {
-            "name": "Ail",
-            "quantity": 1.5,
-            "unit": "gousse"
-          },
-          {
-            "name": "Crème liquide",
-            "quantity": 150,
-            "unit": "ml"
-          },
-          {
-            "name": "Burrata",
-            "quantity": 1.5,
-            "unit": ""
-          },
-          {
-            "name": "Basilic (frais)",
-            "quantity": 3,
-            "unit": "brins"
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 3,
-            "unit": "c. à café"
-          }
+            {
+                "name": "Pâtes (Linguine)",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate (basilic)",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon jaune",
+                "quantity": 0.75,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1.5,
+                "unit": "gousse"
+            },
+            {
+                "name": "Crème liquide",
+                "quantity": 150,
+                "unit": "ml"
+            },
+            {
+                "name": "Burrata",
+                "quantity": 1.5,
+                "unit": "pièce"
+            },
+            {
+                "name": "Basilic (frais)",
+                "quantity": 3,
+                "unit": "brins"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 3,
+                "unit": "cuillère à café"
+            }
         ],
         "steps": [
-          {
-            "description": "Dans une casserole d’eau bouillante salée, faites cuire les pâtes selon les instructions du paquet. En fin de cuisson, réservez une petite louche d'eau de cuisson, puis égouttez les pâtes."
-          },
-          {
-            "description": "Pendant ce temps, épluchez puis émincez les oignons."
-          },
-          {
-            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez les oignons et l'ail râpé. Salez et poivrez. Faites-les cuire 4 à 5 minutes."
-          },
-          {
-            "description": "Ajoutez la sauce tomate et la crème. Mélangez et poursuivez la cuisson 2 à 3 minutes sur feu doux."
-          },
-          {
-            "description": "Ajoutez les pâtes égouttées et l'eau de cuisson réservée, si besoin. Mélangez bien le tout."
-          },
-          {
-            "description": "Servez les pâtes crémeuses à la tomate dans une assiette. Ajoutez la burrata par-dessus. Ré-assaisonnez selon vos goûts et ajoutez quelques feuilles de basilic, si vous en avez. C'est prêt !"
-          }
+            {
+                "description": "Dans une casserole d’eau bouillante salée, faites cuire les pâtes selon les instructions du paquet. En fin de cuisson, réservez une petite louche d'eau de cuisson, puis égouttez les pâtes."
+            },
+            {
+                "description": "Pendant ce temps, épluchez puis émincez les oignons."
+            },
+            {
+                "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez les oignons et l'ail râpé. Salez et poivrez. Faites-les cuire 4 à 5 minutes."
+            },
+            {
+                "description": "Ajoutez la sauce tomate et la crème. Mélangez et poursuivez la cuisson 2 à 3 minutes sur feu doux."
+            },
+            {
+                "description": "Ajoutez les pâtes égouttées et l'eau de cuisson réservée, si besoin. Mélangez bien le tout."
+            },
+            {
+                "description": "Servez les pâtes crémeuses à la tomate dans une assiette. Ajoutez la burrata par-dessus. Ré-assaisonnez selon vos goûts et ajoutez quelques feuilles de basilic, si vous en avez. C'est prêt !"
+            }
         ],
         "tags": [
-          "pâtes",
-          "tomate",
-          "burrata",
-          "crémeux",
-          "italien"
+            "italien",
+            "pâtes",
+            "rapide",
+            "crémeux"
         ],
-        "nutritionalInfo": {
-          "calories": 794,
-          "fat": 40,
-          "carbs": 78,
-          "protein": 23,
-          "fiber": 8,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "C",
-          "greenScore": "A"
-        }
-      },
-      {
-        "id": "96bb9s7pk27y34pi16jr",
-        "name": "Pâtes crémeuses aux champignons à l'italienne",
-        "description": "Des pâtes généreuses & pleines de goût, qui sentent bon l’Italie !",
-        "category": "plat",
+        "createdAt": "2026-08-25T07:54:19.676929Z",
+        "updatedAt": "2026-08-25T07:54:19.676934Z"
+    },
+    {
+        "id": "13",
+        "name": "Pâtes crémeuses au parmesan",
+        "description": "Un classique italien revisité.",
+        "category": null,
         "prepTime": 5,
-        "cookTime": 14,
-        "portions": 3,
-        "difficulty": "Très facile",
+        "cookTime": 12,
+        "portions": 2,
+        "difficulty": "Facile",
         "ingredients": [
-          {
-            "name": "Penne rigate protéinées",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Champignons de Paris (frais)",
-            "quantity": 450,
-            "unit": "g"
-          },
-          {
-            "name": "Tomate (concentré)",
-            "quantity": 3,
-            "unit": "c. à café"
-          },
-          {
-            "name": "Crème fraîche",
-            "quantity": 3,
-            "unit": "c. à soupe"
-          },
-          {
-            "name": "Ail",
-            "quantity": 0.75,
-            "unit": "gousse"
-          },
-          {
-            "name": "Parmesan (râpé)",
-            "quantity": 60,
-            "unit": "g"
-          },
-          {
-            "name": "Origan (séché)",
-            "quantity": 3,
-            "unit": "pincée"
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 3,
-            "unit": "c. à café"
-          }
+            {
+                "name": "Pâtes",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Crème fraîche",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1,
+                "unit": "gousse"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
         ],
         "steps": [
-          {
-            "description": "Dans une casserole d'eau bouillante salée, faites cuire les pâtes selon les instructions du paquet. En fin de cuisson, réservez une petite louche d'eau de cuisson, puis égouttez les pâtes."
-          },
-          {
-            "description": "Pendant ce temps, lavez puis coupez les champignons en lamelles."
-          },
-          {
-            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez l'ail râpé et faites-le revenir 30 secondes, en mélangeant."
-          },
-          {
-            "description": "Ajoutez ensuite les champignons. Salez, poivrez et faites revenir le tout 5 à 6 minutes."
-          },
-          {
-            "description": "Ajoutez l'origan, le concentré de tomate, la crème fraîche et l'eau de cuisson réservée. Mélangez bien et poursuivez la cuisson 2 à 3 minutes, sur feu moyen."
-          },
-          {
-            "description": "Ajoutez le parmesan dans la poêle et mélangez bien le tout, jusqu'à ce que la sauce soit crémeuse."
-          },
-          {
-            "description": "Ajoutez les pâtes égouttées et mélangez à nouveau."
-          },
-          {
-            "description": "Servez les pâtes crémeuses aux champignons à l'italienne dans un bol ou une assiette creuse. Ré-assaisonnez selon vos goûts, c'est prêt !"
-          }
+            {
+                "description": "Faites cuire les pâtes dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Dans une poêle, faites revenir l'ail dans de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez la crème fraîche et le parmesan râpé. Mélangez bien."
+            },
+            {
+                "description": "Ajoutez les pâtes égouttées et mélangez."
+            },
+            {
+                "description": "Servez chaud."
+            }
         ],
         "tags": [
-          "pâtes",
-          "champignons",
-          "italien",
-          "crémeux"
+            "italien",
+            "pâtes",
+            "parmesan",
+            "crémeux"
         ],
-        "nutritionalInfo": {
-          "calories": 632,
-          "fat": 27,
-          "carbs": 64,
-          "protein": 29,
-          "fiber": 11,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "B",
-          "greenScore": "C"
-        }
-      },
-      {
-        "id": "93bk8qf0cli802uj1bo9",
-        "name": "Chakchouka aux lentilles & poireaux",
-        "description": "Faites le plein d'énergie avec cette chakchouka riche en fibres & en protéines !",
-        "category": "plat",
-        "prepTime": 12,
-        "cookTime": 21,
-        "portions": 3,
-        "difficulty": "Très facile",
+        "createdAt": "2026-08-25T07:54:19.677112Z",
+        "updatedAt": "2026-08-25T07:54:19.677117Z"
+    },
+    {
+        "id": "14",
+        "name": "Risotto champignons, ail et fines herbes",
+        "description": "Un risotto onctueux et parfumé.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
         "ingredients": [
-          {
-            "name": "Lentilles (cuites)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Œuf",
-            "quantity": 6,
-            "unit": ""
-          },
-          {
-            "name": "Poireau",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Oignon jaune",
-            "quantity": 0.75,
-            "unit": ""
-          },
-          {
-            "name": "Tomate (chair)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Feta",
-            "quantity": 60,
-            "unit": "g"
-          },
-          {
-            "name": "Basilic (frais)",
-            "quantity": 3,
-            "unit": "brins"
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 3,
-            "unit": "c. à café"
-          }
+            {
+                "name": "Riz Arborio",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Fines herbes",
+                "quantity": 1,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Bouillon de légumes",
+                "quantity": 500,
+                "unit": "ml"
+            },
+            {
+                "name": "Vin blanc",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 30,
+                "unit": "g"
+            }
         ],
         "steps": [
-          {
-            "description": "Épluchez puis coupez les oignons en fines lamelles."
-          },
-          {
-            "description": "Coupez les extrémités des poireaux pour ne garder que le blanc, puis émincez-les. Placez-les dans une passoire et rincez abondamment pour retirer les impuretés."
-          },
-          {
-            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu vif. Ajoutez les oignons et les poireaux. Salez, poivrez, puis faites-les revenir 2 à 3 minutes, en mélangeant. Couvrez et poursuivez la cuisson 8 à 10 minutes, sur feu doux."
-          },
-          {
-            "description": "Ajoutez la pulpe de tomates et les lentilles. Mélangez, puis couvrez et poursuivez la cuisson 4 à 5 minutes."
-          },
-          {
-            "description": "Creusez des puits dans le mélange. Cassez-y délicatement les œufs, puis salez et poivrez-les. Couvrez et poursuivez la cuisson 2 à 3 minutes."
-          },
-          {
-            "description": "Ajoutez la feta émiettée et les feuilles de basilic, si vous en avez. Ré-assaisonnez selon vos goûts et dégustez chaud avec du pain grillé. C'est prêt !"
-          }
+            {
+                "description": "Faites revenir l'ail et les champignons émincés dans une casserole avec un filet d'huile d'olive."
+            },
+            {
+                "description": "Ajoutez le riz et faites-le revenir 2 minutes."
+            },
+            {
+                "description": "Déglacez avec le vin blanc et laissez évaporer."
+            },
+            {
+                "description": "Ajoutez le bouillon petit à petit en remuant jusqu'à absorption."
+            },
+            {
+                "description": "Ajoutez les fines herbes et le parmesan. Mélangez bien."
+            },
+            {
+                "description": "Servez chaud."
+            }
         ],
         "tags": [
-          "chakchouka",
-          "lentilles",
-          "poireaux",
-          "œufs",
-          "protéiné"
+            "risotto",
+            "champignons",
+            "italien",
+            "onctueux"
         ],
-        "nutritionalInfo": {
-          "calories": 401,
-          "fat": 18,
-          "carbs": 24,
-          "protein": 30,
-          "fiber": 13,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "A",
-          "greenScore": "A+"
-        }
-      },
-      {
-        "id": "901tfv831jo002xt0tkt",
-        "name": "Boulettes végé, courgettes & sauce yaourt",
-        "description": "De délicieuses boulettes végétales accompagnées de légumes de saison grillés & d'une sauce onctueuse !",
-        "category": "plat",
-        "prepTime": 7,
-        "cookTime": 16,
-        "portions": 3,
-        "difficulty": "Très facile",
-        "ingredients": [
-          {
-            "name": "Boulettes végétales",
-            "quantity": 240,
-            "unit": "g"
-          },
-          {
-            "name": "Courgette",
-            "quantity": 750,
-            "unit": "g"
-          },
-          {
-            "name": "Yaourt Grec",
-            "quantity": 3,
-            "unit": "c. à soupe"
-          },
-          {
-            "name": "Ail",
-            "quantity": 0.75,
-            "unit": "gousse"
-          },
-          {
-            "name": "Citron jaune",
-            "quantity": 0.375,
-            "unit": ""
-          },
-          {
-            "name": "Menthe (feuilles)",
-            "quantity": 0.3,
-            "unit": "bouquet"
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 3,
-            "unit": "c. à soupe"
-          }
-        ],
-        "steps": [
-          {
-            "description": "Lavez puis coupez les courgettes en demi-lunes."
-          },
-          {
-            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez les courgettes. Salez, poivrez puis faites-les revenir 7 à 8 minutes."
-          },
-          {
-            "description": "Pendant ce temps, préparez la sauce au yaourt. Si vous en avez, rincez puis ciselez finement la menthe."
-          },
-          {
-            "description": "Dans un bol, mélangez : le yaourt grec, l'ail râpé, le zeste et le jus de citron, la menthe ciselée (optionnel) et un filet d'huile d'olive. Salez et poivrez. Réservez au frais."
-          },
-          {
-            "description": "Dans une seconde poêle, faites chauffer un filet d'huile d'olive, sur feu moyen. Ajoutez les boulettes végétales et faites-les cuire 8 minutes, en remuant régulièrement, jusqu'à ce qu'elles soient dorées sur toutes les faces."
-          },
-          {
-            "description": "Vérifiez la cuisson des courgettes, puis servez-les dans une assiette ou un bol avec les boulettes végétales et la sauce au yaourt. Ajoutez quelques feuilles de menthe, s'il vous en reste et ré-assaisonnez selon vos goûts. C'est prêt !"
-          }
-        ],
-        "tags": [
-          "boulettes végétales",
-          "courgettes",
-          "sauce yaourt",
-          "végétarien"
-        ],
-        "nutritionalInfo": {
-          "calories": 237,
-          "fat": 12,
-          "carbs": 13,
-          "protein": 18,
-          "fiber": 7,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "A",
-          "greenScore": "A+"
-        }
-      },
-      {
-        "id": "8lvy7hy838g0jnld13f5",
-        "name": "Frittata fromage fouetté & tomates séchées",
-        "description": "Le goût incomparable du fromage fouetté dans une frittata irrésistible !",
-        "category": "plat",
-        "prepTime": 8,
+        "createdAt": "2026-08-25T07:54:19.677505Z",
+        "updatedAt": "2026-08-25T07:54:19.677513Z"
+    },
+    {
+        "id": "15",
+        "name": "One-pan gnocchi, tomates, mozza et sauce pesto",
+        "description": "Un plat complet en une seule poêle.",
+        "category": null,
+        "prepTime": 5,
         "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Gnocchi",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Tomates cerises",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Mozzarella",
+                "quantity": 125,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce pesto",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir les gnocchi dans une poêle avec un filet d'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les tomates cerises coupées en deux."
+            },
+            {
+                "description": "Ajoutez la sauce pesto et mélangez bien."
+            },
+            {
+                "description": "Ajoutez la mozzarella coupée en dés et laissez fondre."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "gnocchi",
+            "pesto",
+            "mozzarella",
+            "one-pan"
+        ],
+        "createdAt": "2026-08-25T07:54:19.677700Z",
+        "updatedAt": "2026-08-25T07:54:19.677705Z"
+    },
+    {
+        "id": "16",
+        "name": "Tikka masala veggie express",
+        "description": "Un curry indien rapide et végétarien.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pois chiches",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Tomates",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Épices tikka masala",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'oignon et l'ail dans une poêle avec de l'huile."
+            },
+            {
+                "description": "Ajoutez les épices tikka masala et mélangez."
+            },
+            {
+                "description": "Ajoutez les tomates coupées en dés et le lait de coco. Laissez mijoter 10 minutes."
+            },
+            {
+                "description": "Ajoutez les pois chiches égouttés et laissez cuire encore 5 minutes."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "curry",
+            "indien",
+            "végétarien",
+            "express"
+        ],
+        "createdAt": "2026-08-25T07:54:19.677897Z",
+        "updatedAt": "2026-08-25T07:54:19.677901Z"
+    },
+    {
+        "id": "17",
+        "name": "Ratatouille maison",
+        "description": "Un classique provençal.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 30,
         "portions": 4,
-        "difficulty": "Très facile",
+        "difficulty": "Facile",
         "ingredients": [
-          {
-            "name": "Œuf",
-            "quantity": 8,
-            "unit": ""
-          },
-          {
-            "name": "Fromage fouetté",
-            "quantity": 200,
-            "unit": "g"
-          },
-          {
-            "name": "Tomates séchées",
-            "quantity": 100,
-            "unit": "g"
-          },
-          {
-            "name": "Épinard (frais)",
-            "quantity": 2,
-            "unit": "poignées"
-          },
-          {
-            "name": "Échalote",
-            "quantity": 1,
-            "unit": ""
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 2,
-            "unit": "c. à soupe"
-          }
+            {
+                "name": "Aubergine",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Poivron rouge",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Tomates",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            }
         ],
         "steps": [
-          {
-            "description": "Préchauffez le four à 180°C. Épluchez puis coupez les échalotes en fines lamelles."
-          },
-          {
-            "description": "Égouttez puis coupez les tomates séchées en lamelles."
-          },
-          {
-            "description": "Dans un saladier, cassez les œufs. Salez, poivrez puis battez-les avec une fourchette ou un fouet."
-          },
-          {
-            "description": "Huilez ou beurrez le fond d'un moule (le nôtre fait 23 cm de diamètre) à l'aide d'un pinceau. Déposez une feuille de papier cuisson dans le fond du moule et huilez-le."
-          },
-          {
-            "description": "Ajoutez les pousses d'épinards, les échalotes et les lamelles de tomates séchées."
-          },
-          {
-            "description": "Versez les œufs battus, puis disposez des morceaux de fromage fouetté sur le dessus. Ré-assaisonnez selon vos goûts, puis enfournez 15 à 20 minutes à 180°C."
-          },
-          {
-            "description": "Sortez la frittata du four puis démoulez-la. Ajoutez quelques feuilles de basilic, si vous en avez et servez-la avec une salade verte. C'est prêt !"
-          }
+            {
+                "description": "Coupez tous les légumes en dés."
+            },
+            {
+                "description": "Faites revenir l'oignon et l'ail dans une cocotte avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les aubergines, courgettes et poivrons. Laissez mijoter 15 minutes."
+            },
+            {
+                "description": "Ajoutez les tomates coupées en dés et laissez cuire encore 15 minutes."
+            },
+            {
+                "description": "Servez chaud ou froid."
+            }
         ],
         "tags": [
-          "frittata",
-          "fromage fouetté",
-          "tomates séchées",
-          "épinards"
+            "ratatouille",
+            "légumes",
+            "provençal",
+            "classique"
         ],
-        "nutritionalInfo": {
-          "calories": 352,
-          "fat": 27,
-          "carbs": 7,
-          "protein": 19,
-          "fiber": 2,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "C",
-          "greenScore": "B"
-        }
-      },
-      {
-        "id": "99qb8us95fey2oiu13c5",
-        "name": "Curry de pois chiches coco cacahuètes",
-        "description": "Le mélange curry & cacahuètes mettra vos papilles en éveil !",
-        "category": "plat",
-        "prepTime": 0,
-        "cookTime": 13,
-        "portions": 3,
-        "difficulty": "Très facile",
+        "createdAt": "2026-08-25T07:54:19.678105Z",
+        "updatedAt": "2026-08-25T07:54:19.678111Z"
+    },
+    {
+        "id": "18",
+        "name": "Patates douces et chèvre rôtis au thym",
+        "description": "Un accompagnement savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
         "ingredients": [
-          {
-            "name": "Riz",
-            "quantity": 210,
-            "unit": "g"
-          },
-          {
-            "name": "Pois chiches (cuits)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Épinards (surgelés)",
-            "quantity": 300,
-            "unit": "g"
-          },
-          {
-            "name": "Tomates concassées",
-            "quantity": 150,
-            "unit": "g"
-          },
-          {
-            "name": "Beurre de cacahuète",
-            "quantity": 3,
-            "unit": "c. à café"
-          },
-          {
-            "name": "Lait de coco",
-            "quantity": 150,
-            "unit": "ml"
-          },
-          {
-            "name": "Curry (poudre)",
-            "quantity": 2,
-            "unit": "c. à café"
-          },
-          {
-            "name": "Ail",
-            "quantity": 0.75,
-            "unit": ""
-          },
-          {
-            "name": "Huile d'olive",
-            "quantity": 3,
-            "unit": "c. à café"
-          }
+            {
+                "name": "Patate douce",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Fromage de chèvre",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Thym",
+                "quantity": 1,
+                "unit": "branche"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
         ],
         "steps": [
-          {
-            "description": "Dans une casserole d'eau bouillante salée, faites cuire le riz selon les instructions du paquet. En fin de cuisson, égouttez-le."
-          },
-          {
-            "description": "Faites chauffer un filet d'huile d'olive dans une poêle, sur feu moyen. Ajoutez l'ail râpé et le curry. Faites-les revenir 1 minute, en mélangeant."
-          },
-          {
-            "description": "Ajoutez les tomates concassées, les pois chiches, les épinards et un filet d'eau. Salez et poivrez. Couvrez et laissez mijoter 8 à 10 minutes."
-          },
-          {
-            "description": "En fin de cuisson, mélangez le tout, puis ajoutez le beurre de cacahuètes et le lait de coco. Mélangez bien et poursuivez la cuisson 1 à 2 minutes supplémentaires."
-          },
-          {
-            "description": "Servez le riz dans un bol ou une assiette creuse avec le curry de pois chiches au coco cacahuètes. Ré-assaisonnez selon vos goûts et ajoutez quelques feuilles de coriandre, si vous en avez. C'est prêt !"
-          }
+            {
+                "description": "Épluchez et coupez les patates douces en cubes."
+            },
+            {
+                "description": "Disposes les cubes sur une plaque de cuisson, arrosez d'huile d'olive, ajoutez le thym, salez et poivrez."
+            },
+            {
+                "description": "Faites rôtir au four à 200°C pendant 20 minutes."
+            },
+            {
+                "description": "Ajoutez le fromage de chèvre coupé en rondelles et faites cuire encore 5 minutes."
+            },
+            {
+                "description": "Servez chaud."
+            }
         ],
         "tags": [
-          "curry",
-          "pois chiches",
-          "coco",
-          "cacahuètes",
-          "végétarien"
+            "patate douce",
+            "chèvre",
+            "rôti",
+            "accompagnement"
         ],
-        "nutritionalInfo": {
-          "calories": 639,
-          "fat": 23,
-          "carbs": 81,
-          "protein": 20,
-          "fiber": 15,
-          "unit": "kcal"
-        },
-        "costPerServing": "€€€",
-        "scores": {
-          "nutriScore": "A",
-          "greenScore": "A+"
-        }
-      }
-    ]
-  }
+        "createdAt": "2026-08-25T07:54:19.678227Z",
+        "updatedAt": "2026-08-25T07:54:19.678229Z"
+    },
+    {
+        "id": "19",
+        "name": "Salade de lentilles, patate douce et avocat",
+        "description": "Une salade complète et nourrissante.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Lentilles vertes",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Patate douce",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Avocat",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Tomates cerises",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Vinaigrette",
+                "quantity": 50,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Épluchez et coupez la patate douce en dés. Faites-la rôtir au four à 200°C pendant 20 minutes."
+            },
+            {
+                "description": "Dans un saladier, mélangez les lentilles égouttées, la patate douce rôtie, l'avocat coupé en dés et les tomates cerises."
+            },
+            {
+                "description": "Arrosez de vinaigrette et mélangez délicatement."
+            },
+            {
+                "description": "Servez frais."
+            }
+        ],
+        "tags": [
+            "salade",
+            "lentilles",
+            "patate douce",
+            "avocat"
+        ],
+        "createdAt": "2026-08-25T07:54:19.678324Z",
+        "updatedAt": "2026-08-25T07:54:19.678326Z"
+    },
+    {
+        "id": "20",
+        "name": "Poêlée pois chiches, épinards et œuf",
+        "description": "Un plat rapide et riche en protéines.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pois chiches",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Épinards frais",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Œufs",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1,
+                "unit": "gousse"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'ail dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les épinards et faites-les dégorger."
+            },
+            {
+                "description": "Ajoutez les pois chiches égouttés et mélangez."
+            },
+            {
+                "description": "Faites des puits dans la poêlée et cassez un œuf dans chaque puits."
+            },
+            {
+                "description": "Couvrez et laissez cuire jusqu'à ce que les œufs soient pris."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "pois chiches",
+            "épinards",
+            "œufs",
+            "rapide"
+        ],
+        "createdAt": "2026-08-25T07:54:19.678413Z",
+        "updatedAt": "2026-08-25T07:54:19.678415Z"
+    },
+    {
+        "id": "21",
+        "name": "Curry d'aubergines",
+        "description": "Un curry végétarien riche en saveurs.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Aubergine",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Curry en poudre",
+                "quantity": 2,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Tomates",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Coupez l'aubergine en dés et faites-la dégorger avec du sel."
+            },
+            {
+                "description": "Faites revenir l'oignon et l'ail dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les dés d'aubergine et faites revenir 5 minutes."
+            },
+            {
+                "description": "Ajoutez les tomates coupées en dés, le lait de coco et le curry en poudre. Laissez mijoter 15 minutes."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "curry",
+            "aubergine",
+            "végétarien",
+            "épicé"
+        ],
+        "createdAt": "2026-08-25T07:54:55.982610Z",
+        "updatedAt": "2026-08-25T07:54:55.982624Z"
+    },
+    {
+        "id": "22",
+        "name": "Gnocchi à poêler, champignons et feta",
+        "description": "Un plat rapide et savoureux.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Gnocchi",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Feta",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1,
+                "unit": "gousse"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'ail et les champignons émincés dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les gnocchi et faites-les dorer."
+            },
+            {
+                "description": "Ajoutez la feta émiettée et mélangez."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "gnocchi",
+            "champignons",
+            "feta",
+            "rapide"
+        ],
+        "createdAt": "2026-08-25T07:54:55.982732Z",
+        "updatedAt": "2026-08-25T07:54:55.982734Z"
+    },
+    {
+        "id": "23",
+        "name": "Burger veggie façon pulled pork",
+        "description": "Un burger végétarien avec une texture de pulled pork.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Moyen",
+        "ingredients": [
+            {
+                "name": "Pain à burger",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Protéines de soja texturées",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce barbecue",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Salade",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Tomate",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Oignon rouge",
+                "quantity": 0.5,
+                "unit": "pièce"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Réhydratez les protéines de soja texturées dans de l'eau chaude."
+            },
+            {
+                "description": "Égouttez et mélangez avec la sauce barbecue."
+            },
+            {
+                "description": "Faites revenir le mélange dans une poêle jusqu'à ce qu'il soit bien doré."
+            },
+            {
+                "description": "Montez les burgers avec le pain, la salade, la tomate, l'oignon rouge et le mélange pulled pork veggie."
+            },
+            {
+                "description": "Servez immédiatement."
+            }
+        ],
+        "tags": [
+            "burger",
+            "végétarien",
+            "pulled pork",
+            "fast-food"
+        ],
+        "createdAt": "2026-08-25T07:54:55.982839Z",
+        "updatedAt": "2026-08-25T07:54:55.982841Z"
+    },
+    {
+        "id": "24",
+        "name": "Dahl patates douces et lentilles corail",
+        "description": "Un plat indien réconfortant.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 30,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Lentilles corail",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Patate douce",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Curcuma",
+                "quantity": 1,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Cumin",
+                "quantity": 1,
+                "unit": "cuillère à café"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles corail dans de l'eau bouillante salée pendant 15 minutes."
+            },
+            {
+                "description": "Épluchez et coupez la patate douce en dés. Faites-la cuire à l'eau pendant 10 minutes."
+            },
+            {
+                "description": "Faites revenir l'oignon et l'ail dans une casserole avec de l'huile."
+            },
+            {
+                "description": "Ajoutez les lentilles égouttées, les patates douces, le lait de coco, le curcuma et le cumin. Laissez mijoter 10 minutes."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "dahl",
+            "lentilles",
+            "patate douce",
+            "indien"
+        ],
+        "createdAt": "2026-08-25T07:54:55.982954Z",
+        "updatedAt": "2026-08-25T07:54:55.982956Z"
+    },
+    {
+        "id": "25",
+        "name": "Sandwich tomates séchées, mozza et pesto",
+        "description": "Un sandwich italien gourmand.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 0,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Pain ciabatta",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Tomates séchées",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Mozzarella",
+                "quantity": 125,
+                "unit": "g"
+            },
+            {
+                "name": "Pesto",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Basilic frais",
+                "quantity": 5,
+                "unit": "feuilles"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Coupez le pain ciabatta en deux."
+            },
+            {
+                "description": "Étalez le pesto sur une tranche de pain."
+            },
+            {
+                "description": "Ajoutez les tomates séchées, la mozzarella coupée en tranches et le basilic frais."
+            },
+            {
+                "description": "Refermez le sandwich et servez."
+            }
+        ],
+        "tags": [
+            "sandwich",
+            "italien",
+            "tomates séchées",
+            "mozzarella"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983098Z",
+        "updatedAt": "2026-08-25T07:54:55.983102Z"
+    },
+    {
+        "id": "26",
+        "name": "Purée maison et poulet à la crème",
+        "description": "Un plat réconfortant et classique.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pommes de terre",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Poulet",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Crème fraîche",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Beurre",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Lait",
+                "quantity": 100,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les pommes de terre dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Égouttez et écrasez les pommes de terre avec le beurre et le lait pour obtenir une purée lisse."
+            },
+            {
+                "description": "Faites revenir les morceaux de poulet dans une poêle avec un filet d'huile."
+            },
+            {
+                "description": "Ajoutez la crème fraîche et laissez mijoter 10 minutes."
+            },
+            {
+                "description": "Servez la purée avec le poulet à la crème."
+            }
+        ],
+        "tags": [
+            "purée",
+            "poulet",
+            "crème",
+            "réconfortant"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983259Z",
+        "updatedAt": "2026-08-25T07:54:55.983263Z"
+    },
+    {
+        "id": "27",
+        "name": "Ravioles à la toscane",
+        "description": "Un plat italien léger et savoureux.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Ravioles",
+                "quantity": 250,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Basilic frais",
+                "quantity": 5,
+                "unit": "feuilles"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 30,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les ravioles dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Faites chauffer la sauce tomate dans une casserole."
+            },
+            {
+                "description": "Ajoutez les ravioles égouttées à la sauce tomate."
+            },
+            {
+                "description": "Servez avec du basilic frais et du parmesan râpé."
+            }
+        ],
+        "tags": [
+            "ravioles",
+            "italien",
+            "léger",
+            "savoureux"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983364Z",
+        "updatedAt": "2026-08-25T07:54:55.983366Z"
+    },
+    {
+        "id": "28",
+        "name": "Burger veggie au saint-nectaire",
+        "description": "Un burger végétarien avec du fromage saint-nectaire.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pain à burger",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Galette végétarienne",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Saint-nectaire",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Salade",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Tomate",
+                "quantity": 1,
+                "unit": "pièce"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les galettes végétariennes selon les instructions du paquet."
+            },
+            {
+                "description": "Faites fondre le saint-nectaire sur les galettes chaudes."
+            },
+            {
+                "description": "Montez les burgers avec le pain, la salade, la tomate et les galettes au saint-nectaire."
+            },
+            {
+                "description": "Servez immédiatement."
+            }
+        ],
+        "tags": [
+            "burger",
+            "végétarien",
+            "saint-nectaire",
+            "fromage"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983464Z",
+        "updatedAt": "2026-08-25T07:54:55.983466Z"
+    },
+    {
+        "id": "29",
+        "name": "Risotto aux champignons",
+        "description": "Un risotto crémeux aux champignons.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Riz Arborio",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Vin blanc",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "name": "Bouillon de légumes",
+                "quantity": 500,
+                "unit": "ml"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 30,
+                "unit": "g"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'oignon émincé dans une casserole avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les champignons émincés et faites-les cuire 5 minutes."
+            },
+            {
+                "description": "Ajoutez le riz et faites-le revenir 2 minutes."
+            },
+            {
+                "description": "Déglacez avec le vin blanc et laissez évaporer."
+            },
+            {
+                "description": "Ajoutez le bouillon petit à petit en remuant jusqu'à absorption."
+            },
+            {
+                "description": "Ajoutez le parmesan râpé et mélangez bien. Servez chaud."
+            }
+        ],
+        "tags": [
+            "risotto",
+            "champignons",
+            "crémeux",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983569Z",
+        "updatedAt": "2026-08-25T07:54:55.983570Z"
+    },
+    {
+        "id": "30",
+        "name": "Curry de pois chiches, coco et cacahuètes",
+        "description": "Un curry végétarien riche et savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pois chiches",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Cacahuètes",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Ail",
+                "quantity": 2,
+                "unit": "gousse"
+            },
+            {
+                "name": "Curry en poudre",
+                "quantity": 2,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'oignon et l'ail dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les pois chiches égouttés, le lait de coco et le curry en poudre. Laissez mijoter 15 minutes."
+            },
+            {
+                "description": "Ajoutez les cacahuètes et mélangez."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "curry",
+            "pois chiches",
+            "coco",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:54:55.983671Z",
+        "updatedAt": "2026-08-25T07:54:55.983672Z"
+    },
+    {
+        "id": "31",
+        "name": "Riz sauté choux et carottes",
+        "description": "Un plat asiatique rapide et savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Riz",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Chou chinois",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Carottes",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce soja",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Huile de sésame",
+                "quantity": 1,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire le riz selon les instructions du paquet et laissez-le refroidir."
+            },
+            {
+                "description": "Coupez le chou et les carottes en fines lamelles."
+            },
+            {
+                "description": "Faites sauter le chou et les carottes dans un wok avec de l'huile de sésame."
+            },
+            {
+                "description": "Ajoutez le riz et la sauce soja. Mélangez bien."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "riz",
+            "chou",
+            "carottes",
+            "asiatique"
+        ],
+        "createdAt": "2026-08-25T07:55:32.298859Z",
+        "updatedAt": "2026-08-25T07:55:32.298873Z"
+    },
+    {
+        "id": "32",
+        "name": "Bowl houmous et légumes rôtis",
+        "description": "Un bol healthy et gourmand.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Houmous",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Poivron",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Patate douce",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Quinoa",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire le quinoa selon les instructions du paquet."
+            },
+            {
+                "description": "Coupez les légumes en morceaux et faites-les rôtir au four à 200°C pendant 20 minutes."
+            },
+            {
+                "description": "Dans un bol, disposez le quinoa, les légumes rôtis et le houmous."
+            },
+            {
+                "description": "Arrosez d'un filet d'huile d'olive."
+            },
+            {
+                "description": "Servez frais ou tiède."
+            }
+        ],
+        "tags": [
+            "bowl",
+            "houmous",
+            "légumes rôtis",
+            "healthy"
+        ],
+        "createdAt": "2026-08-25T07:55:32.299118Z",
+        "updatedAt": "2026-08-25T07:55:32.299130Z"
+    },
+    {
+        "id": "33",
+        "name": "Aubergine teriyaki",
+        "description": "Un plat japonais sucré-salé.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Aubergine",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce teriyaki",
+                "quantity": 100,
+                "unit": "ml"
+            },
+            {
+                "name": "Huile de sésame",
+                "quantity": 1,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Graines de sésame",
+                "quantity": 10,
+                "unit": "g"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Coupez l'aubergine en tranches."
+            },
+            {
+                "description": "Faites revenir les tranches dans une poêle avec de l'huile de sésame."
+            },
+            {
+                "description": "Ajoutez la sauce teriyaki et laissez caraméliser."
+            },
+            {
+                "description": "Parsemez de graines de sésame avant de servir."
+            }
+        ],
+        "tags": [
+            "aubergine",
+            "teriyaki",
+            "japonais",
+            "sucré-salé"
+        ],
+        "createdAt": "2026-08-25T07:55:32.299345Z",
+        "updatedAt": "2026-08-25T07:55:32.299350Z"
+    },
+    {
+        "id": "34",
+        "name": "Risotto aux poireaux",
+        "description": "Un risotto crémeux aux poireaux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Riz Arborio",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Poireaux",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Vin blanc",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "name": "Bouillon de légumes",
+                "quantity": 500,
+                "unit": "ml"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 30,
+                "unit": "g"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites revenir l'oignon et les poireaux émincés dans une casserole avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez le riz et faites-le revenir 2 minutes."
+            },
+            {
+                "description": "Déglacez avec le vin blanc et laissez évaporer."
+            },
+            {
+                "description": "Ajoutez le bouillon petit à petit en remuant jusqu'à absorption."
+            },
+            {
+                "description": "Ajoutez le parmesan râpé et mélangez bien. Servez chaud."
+            }
+        ],
+        "tags": [
+            "risotto",
+            "poireaux",
+            "crémeux",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:55:32.299473Z",
+        "updatedAt": "2026-08-25T07:55:32.299477Z"
+    },
+    {
+        "id": "35",
+        "name": "Pâtes crémeuses aux champignons à l'italienne",
+        "description": "Un plat de pâtes crémeux et savoureux.",
+        "category": null,
+        "prepTime": 5,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pâtes",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Crème fraîche",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Ail",
+                "quantity": 1,
+                "unit": "gousse"
+            },
+            {
+                "name": "Parmesan râpé",
+                "quantity": 30,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les pâtes dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Faites revenir l'ail et les champignons émincés dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez la crème fraîche et le parmesan râpé. Mélangez bien."
+            },
+            {
+                "description": "Ajoutez les pâtes égouttées et mélangez."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "pâtes",
+            "champignons",
+            "crémeux",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:55:32.299640Z",
+        "updatedAt": "2026-08-25T07:55:32.299645Z"
+    },
+    {
+        "id": "36",
+        "name": "Curry de chou-fleur aux lentilles et riz",
+        "description": "Un plat végétarien riche en saveurs.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Chou-fleur",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Lentilles vertes",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Riz",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Curry en poudre",
+                "quantity": 2,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Coupez le chou-fleur en fleurettes."
+            },
+            {
+                "description": "Faites revenir l'oignon dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez le chou-fleur, les lentilles égouttées, le lait de coco et le curry en poudre. Laissez mijoter 15 minutes."
+            },
+            {
+                "description": "Servez avec le riz."
+            }
+        ],
+        "tags": [
+            "curry",
+            "chou-fleur",
+            "lentilles",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:55:32.300582Z",
+        "updatedAt": "2026-08-25T07:55:32.300594Z"
+    },
+    {
+        "id": "37",
+        "name": "Boulettes veggie courgettes et sauce yaourt",
+        "description": "Des boulettes légères et savoureuses.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Courgette",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Chapitre",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Œuf",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Yaourt grec",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Menthe fraîche",
+                "quantity": 5,
+                "unit": "feuilles"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Râpez la courgette et pressez-la pour enlever l'excès d'eau."
+            },
+            {
+                "description": "Mélangez la courgette râpée, la chapelure et l'œuf. Formez des boulettes."
+            },
+            {
+                "description": "Faites cuire les boulettes dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Préparez la sauce en mélangeant le yaourt grec et la menthe fraîche hachée."
+            },
+            {
+                "description": "Servez les boulettes avec la sauce yaourt."
+            }
+        ],
+        "tags": [
+            "boulettes",
+            "courgette",
+            "yaourt",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:55:32.300767Z",
+        "updatedAt": "2026-08-25T07:55:32.300769Z"
+    },
+    {
+        "id": "38",
+        "name": "Salade de lentilles et tomates cerises rôties",
+        "description": "Une salade fraîche et savoureuse.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Lentilles vertes",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Tomates cerises",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon rouge",
+                "quantity": 0.5,
+                "unit": "pièce"
+            },
+            {
+                "name": "Vinaigrette",
+                "quantity": 50,
+                "unit": "ml"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Faites rôtir les tomates cerises au four à 200°C pendant 10 minutes."
+            },
+            {
+                "description": "Dans un saladier, mélangez les lentilles égouttées, les tomates cerises rôties et l'oignon rouge émincé."
+            },
+            {
+                "description": "Arrosez de vinaigrette et mélangez délicatement."
+            },
+            {
+                "description": "Servez frais."
+            }
+        ],
+        "tags": [
+            "salade",
+            "lentilles",
+            "tomates cerises",
+            "fraîcheur"
+        ],
+        "createdAt": "2026-08-25T07:55:32.300989Z",
+        "updatedAt": "2026-08-25T07:55:32.300994Z"
+    },
+    {
+        "id": "39",
+        "name": "Gratin de gnocchi à la mozzarella",
+        "description": "Un gratin réconfortant et gourmand.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Gnocchi",
+                "quantity": 500,
+                "unit": "g"
+            },
+            {
+                "name": "Mozzarella",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Basilic frais",
+                "quantity": 5,
+                "unit": "feuilles"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les gnocchi dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Dans un plat à gratin, disposez les gnocchi égouttés, la sauce tomate et la mozzarella coupée en dés."
+            },
+            {
+                "description": "Faites cuire au four à 200°C pendant 15 minutes."
+            },
+            {
+                "description": "Parsemez de basilic frais avant de servir."
+            }
+        ],
+        "tags": [
+            "gratin",
+            "gnocchi",
+            "mozzarella",
+            "réconfortant"
+        ],
+        "createdAt": "2026-08-25T07:55:32.301145Z",
+        "updatedAt": "2026-08-25T07:55:32.301149Z"
+    },
+    {
+        "id": "40",
+        "name": "Légumes coco curry et riz",
+        "description": "Un curry végétarien léger et savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Légumes variés",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Lait de coco",
+                "quantity": 200,
+                "unit": "ml"
+            },
+            {
+                "name": "Curry en poudre",
+                "quantity": 2,
+                "unit": "cuillère à café"
+            },
+            {
+                "name": "Riz",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire le riz selon les instructions du paquet."
+            },
+            {
+                "description": "Faites revenir l'oignon dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les légumes coupés en morceaux et faites-les revenir 5 minutes."
+            },
+            {
+                "description": "Ajoutez le lait de coco et le curry en poudre. Laissez mijoter 10 minutes."
+            },
+            {
+                "description": "Servez avec le riz."
+            }
+        ],
+        "tags": [
+            "curry",
+            "légumes",
+            "coco",
+            "végétarien"
+        ],
+        "createdAt": "2026-08-25T07:55:32.301338Z",
+        "updatedAt": "2026-08-25T07:55:32.301342Z"
+    },
+    {
+        "id": "41",
+        "name": "Lasagnes végétariennes",
+        "description": "Des lasagnes riches en légumes et en saveurs.",
+        "category": null,
+        "prepTime": 20,
+        "cookTime": 40,
+        "portions": 4,
+        "difficulty": "Moyen",
+        "ingredients": [
+            {
+                "name": "Pâtes à lasagnes",
+                "quantity": 250,
+                "unit": "g"
+            },
+            {
+                "name": "Aubergine",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Fromage râpé",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Béchamel",
+                "quantity": 300,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Préchauffez le four à 180°C."
+            },
+            {
+                "description": "Faites revenir les légumes coupés en dés dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Dans un plat à gratin, alternez les couches de pâtes à lasagnes, légumes, sauce tomate et béchamel."
+            },
+            {
+                "description": "Terminez par une couche de fromage râpé."
+            },
+            {
+                "description": "Faites cuire au four pendant 40 minutes."
+            }
+        ],
+        "tags": [
+            "lasagnes",
+            "végétarien",
+            "gratin",
+            "réconfortant"
+        ],
+        "createdAt": "2026-08-25T07:56:02.095526Z",
+        "updatedAt": "2026-08-25T07:56:02.095538Z"
+    },
+    {
+        "id": "42",
+        "name": "Couscous veggie",
+        "description": "Un couscous végétarien léger et savoureux.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 25,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Semoule de couscous",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Carottes",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Pois chiches",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Bouillon de légumes",
+                "quantity": 300,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les légumes dans un bouillon de légumes pendant 20 minutes."
+            },
+            {
+                "description": "Versez la semoule de couscous dans un saladier, ajoutez le bouillon chaud et laissez gonfler 5 minutes."
+            },
+            {
+                "description": "Servez la semoule avec les légumes et les pois chiches égouttés."
+            }
+        ],
+        "tags": [
+            "couscous",
+            "végétarien",
+            "légumes",
+            "léger"
+        ],
+        "createdAt": "2026-08-25T07:56:02.095686Z",
+        "updatedAt": "2026-08-25T07:56:02.095690Z"
+    },
+    {
+        "id": "43",
+        "name": "Salade lentilles, concombre et feta",
+        "description": "Une salade fraîche et équilibrée.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 0,
+        "portions": 2,
+        "difficulty": "Très facile",
+        "ingredients": [
+            {
+                "name": "Lentilles vertes",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Concombre",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Feta",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Tomates",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Vinaigrette",
+                "quantity": 50,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les lentilles dans de l'eau bouillante salée pendant 20 minutes."
+            },
+            {
+                "description": "Coupez le concombre et les tomates en dés."
+            },
+            {
+                "description": "Dans un saladier, mélangez les lentilles égouttées, le concombre, les tomates et la feta émiettée."
+            },
+            {
+                "description": "Arrosez de vinaigrette et mélangez délicatement."
+            },
+            {
+                "description": "Servez frais."
+            }
+        ],
+        "tags": [
+            "salade",
+            "lentilles",
+            "concombre",
+            "feta"
+        ],
+        "createdAt": "2026-08-25T07:56:02.095801Z",
+        "updatedAt": "2026-08-25T07:56:02.095804Z"
+    },
+    {
+        "id": "44",
+        "name": "Burger italien veggie",
+        "description": "Un burger végétarien aux saveurs italiennes.",
+        "category": null,
+        "prepTime": 15,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pain à burger",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Galette végétarienne",
+                "quantity": 2,
+                "unit": "pièce"
+            },
+            {
+                "name": "Mozzarella",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Tomate",
+                "quantity": 1,
+                "unit": "pièce"
+            },
+            {
+                "name": "Pesto",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Basilic frais",
+                "quantity": 5,
+                "unit": "feuilles"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les galettes végétariennes selon les instructions du paquet."
+            },
+            {
+                "description": "Faites fondre la mozzarella sur les galettes chaudes."
+            },
+            {
+                "description": "Montez les burgers avec le pain, la tomate, le pesto et le basilic frais."
+            },
+            {
+                "description": "Servez immédiatement."
+            }
+        ],
+        "tags": [
+            "burger",
+            "végétarien",
+            "italien",
+            "mozzarella"
+        ],
+        "createdAt": "2026-08-25T07:56:02.095894Z",
+        "updatedAt": "2026-08-25T07:56:02.095896Z"
+    },
+    {
+        "id": "45",
+        "name": "Frittata fromage fouetté et tomates séchées",
+        "description": "Une frittata onctueuse et savoureuse.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 20,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Œufs",
+                "quantity": 4,
+                "unit": "pièce"
+            },
+            {
+                "name": "Fromage fouetté",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Tomates séchées",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Oignon",
+                "quantity": 0.5,
+                "unit": "pièce"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Préchauffez le four à 180°C."
+            },
+            {
+                "description": "Faites revenir l'oignon émincé dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Dans un bol, battez les œufs avec le fromage fouetté."
+            },
+            {
+                "description": "Ajoutez les tomates séchées et l'oignon à la préparation."
+            },
+            {
+                "description": "Versez le mélange dans un moule et faites cuire au four pendant 20 minutes."
+            }
+        ],
+        "tags": [
+            "frittata",
+            "fromage",
+            "tomates séchées",
+            "italien"
+        ],
+        "createdAt": "2026-08-25T07:56:02.095981Z",
+        "updatedAt": "2026-08-25T07:56:02.095982Z"
+    },
+    {
+        "id": "46",
+        "name": "Légumes sautés gingembre et cajou",
+        "description": "Un plat asiatique rapide et savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 10,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Légumes variés",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Gingembre frais",
+                "quantity": 2,
+                "unit": "cm"
+            },
+            {
+                "name": "Noix de cajou",
+                "quantity": 50,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce soja",
+                "quantity": 3,
+                "unit": "cuillère à soupe"
+            },
+            {
+                "name": "Huile de sésame",
+                "quantity": 1,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Coupez les légumes en fines lamelles."
+            },
+            {
+                "description": "Faites revenir le gingembre râpé dans un wok avec de l'huile de sésame."
+            },
+            {
+                "description": "Ajoutez les légumes et faites-les sauter 5 minutes."
+            },
+            {
+                "description": "Ajoutez les noix de cajou et la sauce soja. Mélangez bien."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "légumes sautés",
+            "gingembre",
+            "cajou",
+            "asiatique"
+        ],
+        "createdAt": "2026-08-25T07:56:02.096100Z",
+        "updatedAt": "2026-08-25T07:56:02.096103Z"
+    },
+    {
+        "id": "47",
+        "name": "Lasagnes veggie aux courgettes et champignons",
+        "description": "Des lasagnes végétariennes légères et savoureuses.",
+        "category": null,
+        "prepTime": 20,
+        "cookTime": 40,
+        "portions": 4,
+        "difficulty": "Moyen",
+        "ingredients": [
+            {
+                "name": "Pâtes à lasagnes",
+                "quantity": 250,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Champignons de Paris",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Sauce tomate",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "Fromage râpé",
+                "quantity": 150,
+                "unit": "g"
+            },
+            {
+                "name": "Béchamel",
+                "quantity": 300,
+                "unit": "ml"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Préchauffez le four à 180°C."
+            },
+            {
+                "description": "Faites revenir les courgettes et les champignons coupés en dés dans une poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Dans un plat à gratin, alternez les couches de pâtes à lasagnes, légumes, sauce tomate et béchamel."
+            },
+            {
+                "description": "Terminez par une couche de fromage râpé."
+            },
+            {
+                "description": "Faites cuire au four pendant 40 minutes."
+            }
+        ],
+        "tags": [
+            "lasagnes",
+            "végétarien",
+            "courgette",
+            "champignons"
+        ],
+        "createdAt": "2026-08-25T07:56:02.096193Z",
+        "updatedAt": "2026-08-25T07:56:02.096195Z"
+    },
+    {
+        "id": "48",
+        "name": "Pâtes feta, courgettes et aubergines grillées",
+        "description": "Un plat méditerranéen léger et savoureux.",
+        "category": null,
+        "prepTime": 10,
+        "cookTime": 15,
+        "portions": 2,
+        "difficulty": "Facile",
+        "ingredients": [
+            {
+                "name": "Pâtes",
+                "quantity": 300,
+                "unit": "g"
+            },
+            {
+                "name": "Courgette",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Aubergine",
+                "quantity": 200,
+                "unit": "g"
+            },
+            {
+                "name": "Feta",
+                "quantity": 100,
+                "unit": "g"
+            },
+            {
+                "name": "Huile d'olive",
+                "quantity": 2,
+                "unit": "cuillère à soupe"
+            }
+        ],
+        "steps": [
+            {
+                "description": "Faites cuire les pâtes dans de l'eau bouillante salée selon les instructions du paquet."
+            },
+            {
+                "description": "Coupez les courgettes et les aubergines en tranches et faites-les griller à la poêle avec de l'huile d'olive."
+            },
+            {
+                "description": "Ajoutez les pâtes égouttées aux légumes grillés."
+            },
+            {
+                "description": "Ajoutez la feta émiettée et mélangez délicatement."
+            },
+            {
+                "description": "Servez chaud."
+            }
+        ],
+        "tags": [
+            "pâtes",
+            "feta",
+            "courgette",
+            "aubergine",
+            "méditerranéen"
+        ],
+        "createdAt": "2026-08-25T07:56:02.096278Z",
+        "updatedAt": "2026-08-25T07:56:02.096280Z"
+    }
 ]
