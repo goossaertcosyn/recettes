@@ -32,7 +32,7 @@ const formatIngredientDisplay = (item: { name: string; quantity: number | null; 
 };
 
 function App() {
-  const { recipes, fetchRecipes, importRecipesFromJson, generateShoppingListFromMealPlans } = useRecipeStore();
+  const { recipes, fetchRecipes, importRecipesFromJson, generateShoppingListFromMealPlans, resetApp } = useRecipeStore();
   const [numPeople, setNumPeople] = useState<number>(2);
   const [numRecipes, setNumRecipes] = useState<number>(3);
   const [generatedRecipes, setGeneratedRecipes] = useState<Recipe[]>([]);
@@ -98,7 +98,7 @@ function App() {
     const init = async () => {
       const storedRecipes = await useRecipeStore.getState().getAllRecipes();
       if (storedRecipes.length === 0) {
-        await importRecipesFromJson(recipesData as unknown as Recipe[]);
+        await importRecipesFromJson((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
       }
       await fetchRecipes();
       setIsLoading(false);
@@ -411,6 +411,16 @@ function App() {
               className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
             >
               Effacer
+            </button>
+            <button
+              onClick={async () => {
+                await resetApp((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
+                setGeneratedRecipes([]);
+                setShoppingList([]);
+              }}
+              className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+            >
+              Reset App
             </button>
           </div>
 
