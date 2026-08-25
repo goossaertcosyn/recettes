@@ -77,13 +77,18 @@ const recipeDB = {
     return this.getAllRecipes();
   },
 };
-// Fonction pour synchroniser les recettes avec le JSON (ne supprime que les recettes, pas les autres données)
+// Fonction pour reset completement l'application (IndexedDB + localStorage)
 export const resetAppDatabase = async (recipes: Recipe[]): Promise<void> => {
   const db = await initDB();
-  const tx = db.transaction(STORE_NAMES.RECIPES, 'readwrite');
+  const tx = db.transaction(
+    [STORE_NAMES.RECIPES, STORE_NAMES.MEAL_PLANS, STORE_NAMES.SHOPPING_LISTS],
+    'readwrite'
+  );
   
-  // Clear uniquement le store des recettes
+  // Clear tous les stores
   await tx.objectStore(STORE_NAMES.RECIPES).clear();
+  await tx.objectStore(STORE_NAMES.MEAL_PLANS).clear();
+  await tx.objectStore(STORE_NAMES.SHOPPING_LISTS).clear();
   
   // Reimporter les recettes depuis le JSON
   const recipesStore = tx.objectStore(STORE_NAMES.RECIPES);
@@ -92,6 +97,9 @@ export const resetAppDatabase = async (recipes: Recipe[]): Promise<void> => {
   }
   
   await tx.done;
+  
+  // Clear localStorage
+  localStorage.clear();
 };
 
 
