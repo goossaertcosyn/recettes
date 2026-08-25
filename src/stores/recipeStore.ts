@@ -77,6 +77,31 @@ const recipeDB = {
     return this.getAllRecipes();
   },
 };
+// Fonction pour reset completement l'application (IndexedDB + localStorage)
+export const resetAppDatabase = async (recipes: Recipe[]): Promise<void> => {
+  const db = await initDB();
+  const tx = db.transaction(
+    [STORE_NAMES.RECIPES, STORE_NAMES.MEAL_PLANS, STORE_NAMES.SHOPPING_LISTS],
+    'readwrite'
+  );
+  
+  // Clear tous les stores
+  await tx.objectStore(STORE_NAMES.RECIPES).clear();
+  await tx.objectStore(STORE_NAMES.MEAL_PLANS).clear();
+  await tx.objectStore(STORE_NAMES.SHOPPING_LISTS).clear();
+  
+  // Reimporter les recettes depuis le JSON
+  const recipesStore = tx.objectStore(STORE_NAMES.RECIPES);
+  for (const recipe of recipes) {
+    await recipesStore.add(recipe);
+  }
+  
+  await tx.done;
+  
+  // Clear localStorage
+  localStorage.clear();
+};
+
 
 // Store Zustand pour gérer l'état global de l'application
 interface AppState {
@@ -109,7 +134,9 @@ interface AppState {
   clearShoppingLists: () => Promise<void>;
   
   // Fonction pour générer une liste de courses à partir des menus
-  generateShoppingListFromMealPlans: (mealPlans: MealPlanItem[], recipes: Recipe[]) => ShoppingListItem[];
+  generateShoppingListFromMealPlans: (mealPlans: MealPlanItem[], recipes: Recipe[]) => ShoppingListItem[];  
+  // Action pour reset l'application
+  resetApp: (recipes: Recipe[]) => Promise<void>;
 }
 
 const useRecipeStore = create<AppState>((set, get) => ({
@@ -279,6 +306,22 @@ const useRecipeStore = create<AppState>((set, get) => ({
       set({ shoppingLists: [], currentShoppingList: null, isLoading: false });
     } catch (err) {
       set({ error: 'Erreur lors de la suppression des listes de courses', isLoading: false });
+    }
+  },
+  
+  resetApp: async (recipes: Recipe[]) => {
+    set({ isLoading: true, error: null });
+    try {
+      await resetAppDatabase(recipes);
+      await get().fetchRecipes();
+      set({ 
+        mealPlans: [], 
+        shoppingLists: [], 
+        currentShoppingList: null,
+        isLoading: false 
+      });
+    } catch (err) {
+      set({ error: 'Erreur lors du reset de l\'application', isLoading: false });
     }
   },
 
