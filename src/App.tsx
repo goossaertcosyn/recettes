@@ -218,7 +218,53 @@ function App() {
     });
   };
 
-  const handleNumPeopleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const addRecipesToShoppingList = () => {
+    if (generatedRecipes.length === 0) return;
+
+    const mealPlans = generatedRecipes.map(recipe => ({
+      id: `${recipe.id}-${Date.now()}`,
+      recipeId: recipe.id,
+      day: new Date(),
+      portions: numPeople,
+    }));
+
+    const items = generateShoppingListFromMealPlans(mealPlans, recipes);
+    // Appliquer des IDs stables
+    const itemsWithStableIds = items.map(item => ({
+      ...item,
+      id: generateStableItemId(item.name, item.unit),
+    }));
+    
+    // Fusionner avec la liste existante
+    const mergedList = [...shoppingList];
+    
+    itemsWithStableIds.forEach(newItem => {
+      const existingIndex = mergedList.findIndex(existing => existing.id === newItem.id);
+      if (existingIndex >= 0) {
+        // Mettre à jour la quantité si l'élément existe
+        const existingItem = mergedList[existingIndex];
+        if (existingItem.quantity !== null && newItem.quantity !== null) {
+          existingItem.quantity += newItem.quantity;
+        } else if (newItem.quantity !== null) {
+          existingItem.quantity = newItem.quantity;
+        }
+      } else {
+        // Ajouter le nouvel élément
+        mergedList.push(newItem);
+      }
+    });
+    
+    // Trier : éléments non cochés en premier, puis cochés
+    const sortedList = [...mergedList].sort((a, b) => {
+      if (a.checked !== b.checked) {
+        return a.checked ? 1 : -1;
+      }
+      return a.name.localeCompare(b.name);
+    });
+    setShoppingList(sortedList);
+  };
+
+    const handleNumPeopleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value) || 1;
     setNumPeople(Math.max(1, value));
   };
@@ -399,27 +445,27 @@ function App() {
             </div>
           </div>
 
-          <div className="flex gap-4 mb-6">
+          <div className="flex flex-wrap gap-4 mb-6">
             <button
               onClick={generateRandomSelection}
-              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors whitespace-nowrap"
             >
               Générer
-            </button>
-            <button
-              onClick={clearShoppingList}
-              className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
-            >
-              Effacer
             </button>
             <button
               onClick={async () => {
                 await resetApp((recipesData as unknown as { recipes: Recipe[] }[])[0].recipes);
                 await fetchRecipes();
               }}
-              className="px-6 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-amber-600 text-white rounded-md hover:bg-amber-700 transition-colors whitespace-nowrap"
             >
-              Reset App
+              Reset
+            </button>
+            <button
+              onClick={addRecipesToShoppingList}
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors whitespace-nowrap"
+            >
+              Ajouter
             </button>
           </div>
 
