@@ -3175,5 +3175,86 @@
         ],
         "createdAt": "2026-08-25T07:56:02.096278Z",
         "updatedAt": "2026-08-25T07:56:02.096280Z"
+    },
+    {
+        "id": "49",
+        "name": "Lasagnes poireaux & ricotta",
+        "description": "Des lasagnes comme vous n'en avez jamais vu ! Une version végétarienne crémeuse aux poireaux fondus et à la ricotta.",
+        "category": "plat",
+        "prepTime": 11,
+        "cookTime": 50,
+        "portions": 4,
+        "difficulty": "facile",
+        "ingredients": [
+            {
+                "name": "lasagnes (cru)",
+                "quantity": 180,
+                "unit": "g"
+            },
+            {
+                "name": "poireau",
+                "quantity": 800,
+                "unit": "g"
+            },
+            {
+                "name": "ricotta",
+                "quantity": 400,
+                "unit": "g"
+            },
+            {
+                "name": "crème liquide",
+                "quantity": 320,
+                "unit": "ml"
+            },
+            {
+                "name": "parmesan (râpé)",
+                "quantity": 80,
+                "unit": "g"
+            },
+            {
+                "name": "beurre",
+                "quantity": null,
+                "unit": "noisette"
+            },
+            {
+                "name": "sel",
+                "quantity": null,
+                "unit": ""
+            },
+            {
+                "name": "poivre",
+                "quantity": null,
+                "unit": ""
+            }
+        ],
+        "steps": [
+            {
+                "description": "Préchauffez le four à 180°C. Coupez les extrémités des poireaux pour ne garder que le blanc, puis coupez-les en rondelles de 1 à 2 cm. Placez-les dans une passoire et rincez abondamment pour retirer les impuretés."
+            },
+            {
+                "description": "Faites fondre une noisette de beurre dans une poêle, sur feu vif. Ajoutez les poireaux et faites-les revenir 2 minutes, en remuant. Salez et poivrez."
+            },
+            {
+                "description": "Baissez le feu à moyen. Couvrez et poursuivez la cuisson 8 à 10 minutes."
+            },
+            {
+                "description": "Une fois les poireaux bien tendres et dorés, ajoutez la ricotta dans la poêle. Mélangez afin d'obtenir une texture crémeuse."
+            },
+            {
+                "description": "Dans un plat allant au four (le nôtre fait 24 x 18 cm), ajoutez une première couche de crème liquide. Parsemez de parmesan râpé, puis ajoutez une couche de fondue de poireaux. Salez et poivrez. Recouvrez de feuilles de lasagnes puis répétez l'opération 2 fois, en terminant par une couche de crème et de parmesan râpé. Enfournez 40 minutes à 180°C."
+            },
+            {
+                "description": "Une fois les lasagnes bien dorées et le fromage fondu, sortez le plat du four. Servez les lasagnes poireaux & ricotta accompagnées d'une salade verte. C'est prêt !"
+            }
+        ],
+        "tags": [
+            "végétarien",
+            "lasagnes",
+            "poireaux",
+            "fromage",
+            "four"
+        ],
+        "createdAt": "2026-10-03T00:00:00Z",
+        "updatedAt": "2026-10-03T00:00:00Z"
     }
 ]
