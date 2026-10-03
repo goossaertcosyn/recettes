@@ -181,8 +181,28 @@ function App() {
       ...item,
       id: generateStableItemId(item.name, item.unit),
     }));
+    // Garder les éléments non cochés existants, effacer les cochés,
+    // puis fusionner avec les nouveaux ingrédients générés
+    const keptItems = shoppingList.filter(item => !item.checked);
+    const mergedItems = [...keptItems];
+    for (const newItem of itemsWithStableIds) {
+      const existingIndex = mergedItems.findIndex(item =>
+        item.name.toLowerCase() === newItem.name.toLowerCase() &&
+        item.unit.toLowerCase() === newItem.unit.toLowerCase()
+      );
+      if (existingIndex >= 0) {
+        const existingItem = mergedItems[existingIndex];
+        if (existingItem.quantity !== null && newItem.quantity !== null) {
+          mergedItems[existingIndex] = { ...existingItem, quantity: existingItem.quantity + newItem.quantity };
+        } else if (newItem.quantity !== null) {
+          mergedItems[existingIndex] = { ...existingItem, quantity: newItem.quantity };
+        }
+      } else {
+        mergedItems.push(newItem);
+      }
+    }
     // Trier : éléments non cochés en premier, puis cochés
-    const sortedItems = [...itemsWithStableIds].sort((a, b) => {
+    const sortedItems = mergedItems.sort((a, b) => {
       if (a.checked !== b.checked) {
         return a.checked ? 1 : -1;
       }
